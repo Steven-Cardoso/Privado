@@ -15,7 +15,7 @@
                     @endif
 
                     You are logged in!
-                    <!-- <menu-container</menu-container> -->
+                    <menu-container :items="{{json_encode($categories) }}"></menu-container>
                 </div>
             </div>
         </div>
