@@ -24,12 +24,12 @@ class HomeController extends Controller
     public function index(MenuService $service)
     {
         // $menus = Menu::all();
-        $resto_ids = [1];
+        // $resto_ids = [1];
 
 
-        $categories = $service->getMenuWithCategory($resto_ids);
+        $menus = $service->getMenuWithCategory([1]);
 
             // return $categories;
-        return view('home', compact('categories'));
+        return view('home', compact('menus'));
     }
 }
