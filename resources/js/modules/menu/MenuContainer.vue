@@ -40,7 +40,9 @@
           <div class="col-md-4">
               <card-component>
                   <template slot="title">Add menu Item</template>
-                  <template slot="body">Form will come here</template>
+                  <template slot="body">
+                   <menu-add-form :categories="categories"></menu-add-form>
+                   </template>
               </card-component>
           </div>
       </div>
@@ -51,12 +53,14 @@
 import _ from 'lodash';
 import MultiSelect from 'vue-multiselect';
 import MenuGroups from './MenuGroups';
+import MenuAddForm from './MenuAddForm';
 
 export default {
     props: ['items'],
     components: {
         MultiSelect,
-        MenuGroups
+        MenuGroups,
+        MenuAddForm
     },
     created() {
         _.forEach(this.items, (item, key) => {
