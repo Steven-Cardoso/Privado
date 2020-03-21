@@ -26,10 +26,10 @@ class HomeController extends Controller
         // $menus = Menu::all();
         // $resto_ids = [1];
 
+        $restoId = 1;
 
-        $menus = $service->getMenuWithCategory([1]);
+        $menus = $service->getMenuWithCategory($restoId);
 
-            // return $categories;
-        return view('home', compact('menus'));
+        return view('home', compact('menus','restoId'));
     }
 }
