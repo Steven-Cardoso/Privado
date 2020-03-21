@@ -1964,6 +1964,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['categories', 'restoId'],
@@ -1972,14 +1978,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      food: {
-        item: '',
-        category: '',
-        price: 100
-      }
+      food: this.emptyFoodItem()
     };
   },
   methods: {
+    emptyFoodItem: function emptyFoodItem() {
+      return {
+        item: '',
+        category: '',
+        price: 100,
+        description: ''
+      };
+    },
     handleSubmit: function handleSubmit() {
       var _this = this;
 
@@ -1989,7 +1999,9 @@ __webpack_require__.r(__webpack_exports__);
       window.axios.post('api/item/save', postData).then(function (response) {
         console.log('response', response.data);
 
-        _this.$emit('newMenuItemAdded', response.data);
+        _this.$emit('newMenuItemAdded', response.data, postData.category);
+
+        _this.food = _this.emptyFoodItem();
       })["catch"](function (error) {
         return console.log('error', error.response);
       });
@@ -2082,8 +2094,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    handleNewMenuItem: function handleNewMenuItem(item) {
+    handleNewMenuItem: function handleNewMenuItem(item, category) {
       console.log('item', item);
+      this.localItems[category].unshift(item);
     }
   }
 });
@@ -38223,6 +38236,32 @@ var render = function() {
                   return
                 }
                 _vm.$set(_vm.food, "price", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "name" } }, [_vm._v("Description")]),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.food.description,
+                expression: "food.description"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { placeholder: "Enter food description" },
+            domProps: { value: _vm.food.description },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.food, "description", $event.target.value)
               }
             }
           })

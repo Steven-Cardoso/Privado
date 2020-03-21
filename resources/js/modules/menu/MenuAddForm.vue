@@ -21,6 +21,12 @@
                 v-model="food.price">
             </div>
 
+          <div class="form-group">
+            <label for="name">Description</label>
+            <textarea class="form-control" placeholder="Enter food description"
+                      v-model="food.description"></textarea>
+          </div>
+
             <div class="form-group">
                 <button class="btn btn-primary">Save</button>
             </div>
@@ -37,14 +43,19 @@ export default {
     },
     data(){
         return {
-            food: {
-                item: '',
-                category: '',
-                price: 100
-            }
+            food: this.emptyFoodItem()
         }
     },
     methods: {
+
+        emptyFoodItem() {
+          return{
+              item: '',
+              category: '',
+              price: 100,
+              description: ''
+          };
+        },
         handleSubmit() {
             console.log('form data', this.food)
           let postData = this.food;
@@ -52,7 +63,8 @@ export default {
           window.axios.post('api/item/save', postData).then(response => {
             console.log('response', response.data);
 
-            this.$emit('newMenuItemAdded', response.data);
+            this.$emit('newMenuItemAdded', response.data, postData.category);
+            this.food = this.emptyFoodItem();
           }).catch(error => console.log('error', error.response));
         }
     }

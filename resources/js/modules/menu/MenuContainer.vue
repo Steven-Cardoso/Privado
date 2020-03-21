@@ -66,8 +66,9 @@ export default {
         }
     },
   methods: {
-      handleNewMenuItem(item) {
+      handleNewMenuItem(item, category) {
         console.log('item',item);
+        this.localItems[category].unshift(item);
       }
   }
 }
