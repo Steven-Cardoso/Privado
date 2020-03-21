@@ -1982,6 +1982,12 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     handleSubmit: function handleSubmit() {
       console.log('form data', this.food);
+      var postData = this.food;
+      window.axios.post('api/item/save', postData).then(function (response) {
+        console.log('response', response.data);
+      })["catch"](function (error) {
+        return console.log('error', error.response);
+      });
     }
   }
 });

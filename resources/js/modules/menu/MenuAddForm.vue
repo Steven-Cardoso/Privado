@@ -47,7 +47,10 @@ export default {
     methods: {
         handleSubmit() {
             console.log('form data', this.food)
-
+          let postData = this.food;
+          window.axios.post('api/item/save', postData).then(response => {
+            console.log('response', response.data);
+          }).catch(error => console.log('error', error.response));
         }
     }
 }
