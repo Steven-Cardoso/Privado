@@ -1981,11 +1981,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     handleSubmit: function handleSubmit() {
+      var _this = this;
+
       console.log('form data', this.food);
       var postData = this.food;
       postData.restoId = this.restoId;
       window.axios.post('api/item/save', postData).then(function (response) {
         console.log('response', response.data);
+
+        _this.$emit('newMenuItemAdded', response.data);
       })["catch"](function (error) {
         return console.log('error', error.response);
       });
@@ -2043,6 +2047,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2062,16 +2067,23 @@ __webpack_require__.r(__webpack_exports__);
     });
 
     this.menu = this.categories[0];
+    this.localItems = this.items;
   },
   data: function data() {
     return {
+      localItems: '',
       menu: '',
       categories: []
     };
   },
   computed: {
     currentMenuItems: function currentMenuItems() {
-      return this.items[this.menu];
+      return this.localItems[this.menu];
+    }
+  },
+  methods: {
+    handleNewMenuItem: function handleNewMenuItem(item) {
+      console.log('item', item);
     }
   }
 });
@@ -38313,7 +38325,8 @@ var render = function() {
                     attrs: {
                       categories: _vm.categories,
                       "resto-id": _vm.restoId
-                    }
+                    },
+                    on: { newMenuItemAdded: _vm.handleNewMenuItem }
                   })
                 ],
                 1

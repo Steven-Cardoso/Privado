@@ -23,6 +23,7 @@
                    <menu-add-form
                      :categories="categories"
                      :resto-id="restoId"
+                     v-on:newMenuItemAdded="handleNewMenuItem"
                    ></menu-add-form>
                    </template>
               </card-component>
@@ -50,17 +51,24 @@ export default {
 
         });
         this.menu = this.categories[0];
+        this.localItems = this.items;
     },
     data() {
         return {
+            localItems: '',
             menu: '',
             categories: []
         }
     },
     computed: {
         currentMenuItems() {
-            return this.items[this.menu];
+            return this.localItems[this.menu];
         }
-    }
+    },
+  methods: {
+      handleNewMenuItem(item) {
+        console.log('item',item);
+      }
+  }
 }
 </script>

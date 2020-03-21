@@ -51,6 +51,8 @@ export default {
             postData.restoId = this.restoId;
           window.axios.post('api/item/save', postData).then(response => {
             console.log('response', response.data);
+
+            this.$emit('newMenuItemAdded', response.data);
           }).catch(error => console.log('error', error.response));
         }
     }
