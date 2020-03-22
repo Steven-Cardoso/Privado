@@ -5,6 +5,7 @@
                 <label for="name">Food Item</label>
                 <input class="form-control" type="text" placeholder="Enter food item name"
                 v-model="food.item">
+                <div class="validation-message" v-text="validation.getMessage('item')"></div>
             </div>
 
             <div class="form-group">
@@ -13,18 +14,21 @@
                 v-model="food.category"
                 :options="categories"
                 ></multi-select>
+                <div class="validation-message" v-text="validation.getMessage('category')"></div>
             </div>
 
             <div class="form-group">
                 <label for="name">Price</label>
                 <input class="form-control" type="number" placeholder="Enter food item price"
                 v-model="food.price">
+                <div class="validation-message" v-text="validation.getMessage('price')"></div>
             </div>
 
           <div class="form-group">
             <label for="name">Description</label>
             <textarea class="form-control" placeholder="Enter food description"
                       v-model="food.description"></textarea>
+            <div class="validation-message" v-text="validation.getMessage('description')"></div>
           </div>
 
             <div class="form-group">
@@ -36,6 +40,7 @@
 </template>
 <script>
 import MultiSelect from 'vue-multiselect';
+import Validation from './../../utils/Validation';
 export default {
     props: ['categories', 'restoId'],
     components: {
@@ -43,7 +48,8 @@ export default {
     },
     data(){
         return {
-            food: this.emptyFoodItem()
+            food: this.emptyFoodItem(),
+            validation: new Validation()
         }
     },
     methods: {
@@ -65,7 +71,14 @@ export default {
 
             this.$emit('newMenuItemAdded', response.data, postData.category);
             this.food = this.emptyFoodItem();
-          }).catch(error => console.log('error', error.response));
+            
+          }).catch(error => {
+              console.log('error', error.response);
+            if(error.response.status == 422 ) {
+                this.validation.setMessages(error.response.data.errors);
+            
+            }
+          });
         }
     }
 }
