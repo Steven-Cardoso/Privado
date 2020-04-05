@@ -28,6 +28,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function restaurants()
+    {
+        return $this->hasMany(Restaurant::class, 'owner_id')
+            ->orderBy('name', 'asc');
+    }
     /**
      * The attributes that should be cast to native types.
      *
