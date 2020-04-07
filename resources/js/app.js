@@ -29,6 +29,8 @@ Vue.component('card-component', require('./components/Card.vue').default);
 
 Vue.component('menu-container', require('./modules/menu/MenuContainer.vue').default);
 
+Vue.component('resto-group', require('./modules/restos/RestoGroup.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
