@@ -6,10 +6,12 @@
 
 require('./bootstrap');
 require('vue-multiselect/dist/vue-multiselect.min.css');
-
+import VModal from 'vue-js-modal';
 
 window.Vue = require('vue');
 
+
+Vue.use(VModal);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
