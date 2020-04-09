@@ -2198,7 +2198,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+// import axios from 'axios';
 /* harmony default export */ __webpack_exports__["default"] = ({
+  // este metodo vai trazer o usuario que esta online no momento
+  // ou seja ele diz qual o usuario atual
+  // created() {
+  //     axios.get('/api/user')
+  // .then(response => {
+  //     console.log('user',response.data);
+  // });
+  // },
   data: function data() {
     return {
       resto: this.basicResto()
@@ -2208,7 +2217,7 @@ __webpack_require__.r(__webpack_exports__);
     basicResto: function basicResto() {
       return {
         name: "",
-        address: "",
+        location: "",
         tables: 0
       };
     },
@@ -2234,6 +2243,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _RestoAddForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RestoAddForm */ "./resources/js/modules/restos/RestoAddForm.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -2262,6 +2273,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     RestoAddForm: _RestoAddForm__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -2269,14 +2281,17 @@ __webpack_require__.r(__webpack_exports__);
   props: ['restos'],
   created: function created() {
     console.log('this.restos.length', this.restos.length);
+    this.localResto = this.restos;
   },
   computed: {
     showAddForm: function showAddForm() {
-      return this.restos.length < 5 ? true : false;
+      return this.localResto.length < 5 ? true : false;
     }
   },
   data: function data() {
-    return {};
+    return {
+      localResto: []
+    };
   },
   methods: {
     handleAddNewResto: function handleAddNewResto() {
@@ -2286,7 +2301,15 @@ __webpack_require__.r(__webpack_exports__);
       this.$modal.hide('add-new-resto');
     },
     handleSaveResto: function handleSaveResto(restoData) {
+      var _this = this;
+
       console.log('restoData', restoData);
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/resto', restoData).then(function (response) {
+        console.log('response', response.data);
+
+        _this.localResto.unshift(response.data);
+      });
+      this.$modal.hide('add-new-resto');
     }
   }
 });
@@ -38689,23 +38712,23 @@ var render = function() {
           {
             name: "model",
             rawName: "v-model",
-            value: _vm.resto.address,
-            expression: "resto.address"
+            value: _vm.resto.location,
+            expression: "resto.location"
           }
         ],
         staticClass: "form-control",
         attrs: {
           type: "text",
-          name: "address",
+          name: "location",
           placeholder: "Enter restaurant address"
         },
-        domProps: { value: _vm.resto.address },
+        domProps: { value: _vm.resto.location },
         on: {
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.$set(_vm.resto, "address", $event.target.value)
+            _vm.$set(_vm.resto, "location", $event.target.value)
           }
         }
       })
@@ -38781,7 +38804,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       [
-        _vm._l(_vm.restos, function(resto) {
+        _vm._l(_vm.localResto, function(resto) {
           return _c(
             "div",
             { key: resto.id, staticClass: "col-md-4 mb-4" },

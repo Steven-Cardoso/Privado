@@ -14,8 +14,8 @@
             <label for="name">Address</label>
             <input type="text"
             class="form-control"
-            name="address"
-            v-model="resto.address"
+            name="location"
+            v-model="resto.location"
             placeholder="Enter restaurant address">
         </div>
 
@@ -35,7 +35,16 @@
 </template>
 
 <script>
+// import axios from 'axios';
 export default {
+    // este metodo vai trazer o usuario que esta online no momento
+    // ou seja ele diz qual o usuario atual
+    // created() {
+    //     axios.get('/api/user')
+    // .then(response => {
+    //     console.log('user',response.data);
+    // });
+    // },
     data() {
         return {
             resto: this.basicResto()
@@ -43,7 +52,7 @@ export default {
     },
     methods: {
         basicResto() {
-            return { name: "", address: "", tables: 0 }
+            return { name: "", location: "", tables: 0 }
         },
         handleAddButton() {
             this.$emit('addRestoEvent', this.resto);

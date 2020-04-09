@@ -18,6 +18,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('name');
             $table->string('location');
             $table->unsignedBigInteger('owner_id'); //Resolvi esse erro que tinha aqui
+            $table->integer('tables')->default(1);
             $table->timestamps();
 
             $table->foreign('owner_id')
