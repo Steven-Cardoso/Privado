@@ -7,6 +7,9 @@
 require('./bootstrap');
 require('vue-multiselect/dist/vue-multiselect.min.css');
 import VModal from 'vue-js-modal';
+import Turbolinks from 'turbolinks';
+import TurbolinksAdapter from 'vue-turbolinks';
+Turbolinks.start();
 
 window.Vue = require('vue');
 
@@ -39,7 +42,11 @@ Vue.component('resto-group', require('./modules/restos/RestoGroup.vue').default)
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-const app = new Vue({
-    el: '#app',
-});
+document.addEventListener('turbolinks:load', () => {
+    var element = document.getElementById("app");
+    if (element != null) {
+        const app = new Vue({
+            el: element
+        });        
+    }
+    });
