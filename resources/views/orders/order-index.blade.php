@@ -4,7 +4,8 @@
 <div class="container">
     <div class="row mb-3">
         <div class="col-md-12">
-            <p>{{$resto}}</p>
+            {{-- <p>{{$resto}}</p> --}}
+            <h2>Manage Orders for {{$resto->name}}</h2>
         </div>
     </div>
 <div class="row">
@@ -25,7 +26,7 @@
                         <tr>
                             <td>{{$order->id}}</td>
                             <td>{{$order->amount}}</td>
-                            <td>{{$order->isComplete}}</td>
+                            <td>{{($order->isComplete) ? 'Completed' : 'Incomplete'}}</td> 
                             <td>
                                 Name: {{$order['order_details']['customer_name']}}
                                 <br>

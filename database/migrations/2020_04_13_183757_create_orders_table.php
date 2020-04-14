@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedInteger('user_id');
             $table->float('amount','8',2);
             $table->boolean('isComplete')->default(0);
-            $table->json('orders_details');
+            $table->json('order_details');
             $table->timestamp('completed_at')->nullable();
             $table->timestamps();
 

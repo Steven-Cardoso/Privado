@@ -16,7 +16,9 @@ class RestaurantOrderController extends Controller
             abort(404, 'The Restaurant you are looking for is not present');
         }
 
-        $orders = Order::where('resto_id', $id)->paginate(20);
+        $orders = Order::where('resto_id', $id)
+            ->orderBy('isComplete')
+            ->paginate(20);
 
         return view('orders.order-index')
             ->with('orders', $orders)
