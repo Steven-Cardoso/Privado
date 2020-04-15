@@ -36,7 +36,7 @@ Vue.component('menu-container', require('./modules/menu/MenuContainer.vue').defa
 
 Vue.component('resto-group', require('./modules/restos/RestoGroup.vue').default);
 
-
+Vue.component('order-group', require('./modules/orders/OrderGroup.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
