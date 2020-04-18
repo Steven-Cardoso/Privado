@@ -32,6 +32,8 @@ export default {
     },
     created() {
         this.loadRestoMenuItems();
+        window.eventBus.$on('menuItemAdded', this.handleNewMenuItem);
+
     },
     computed: {
         finalAmount() {
