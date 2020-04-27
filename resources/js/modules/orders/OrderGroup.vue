@@ -1,8 +1,14 @@
 <template>
+  <div>
+      <div class="row mb-3">
+          <div class="col-md-12">
+            <button @click="handleOrderSave" class="btn btn-success float-right">Save</button>
+          </div>
+      </div>
     <div class="row">
         <div class="col-md-7">
             <h3>Detalhes do Cliente</h3>
-            <order-form></order-form>
+            <order-form @customerDetailsChanged = "customerDetailsHandle"></order-form>
             
             <h3>Detalhes da Ordem <span class="float-right" v-if="finalAmount > 0">Total a Pagar: {{finalAmount}} MZN</span></h3>
             <order-details :order-details="orderDetails"></order-details>
@@ -16,6 +22,7 @@
             ></order-menu-items>
         </div>
     </div>
+  </div>
 </template>
 <script>
 import OrderForm from './OrderForm';
@@ -35,6 +42,7 @@ export default {
         window.eventBus.$on('menuItemAdded', this.handleNewMenuItem);
         window.eventBus.$on('filteredList', this.handleFilteredList);
         window.eventBus.$on('clearFilteredList', this.handleClearFilteredList);
+        // window.eventBus.$on('customerDetailsChanged', this.)
 
     },
     computed: {
@@ -50,7 +58,8 @@ export default {
         return {
             menuItems: [],
             orderDetails: [],
-            originalMenuItems: []
+            originalMenuItems: [],
+            costumerDetails: null
         }
     },
     methods: {
@@ -71,6 +80,18 @@ export default {
         },
         handleClearFilteredList() {
             this.menuItems = this.originalMenuItems;
+        },
+        customerDetailsHandle(customer) {
+            this.costumerDetails = customer;
+        },
+        handleOrderSave() {
+            let orderData = {
+                costumerDetails: this.costumerDetails,
+                finalAmount: this.finalAmount,
+                orderDetails: this.orderDetails
+            };
+            console.log(orderData);
+            axios.post('/api/order/save', orderData).then(response => console.log('response', response));
         }
     }
 }
