@@ -2412,10 +2412,17 @@ __webpack_require__.r(__webpack_exports__);
       this.costumerDetails = customer;
     },
     handleOrderSave: function handleOrderSave() {
+      var orderDetails = [];
+      this.orderDetails.forEach(function (item) {
+        orderDetails.push(item.id);
+      });
       var orderData = {
-        costumerDetails: this.costumerDetails,
-        finalAmount: this.finalAmount,
-        orderDetails: this.orderDetails
+        resto_id: this.restoId,
+        order_data: {
+          costumerDetails: this.costumerDetails,
+          finalAmount: this.finalAmount,
+          orderDetails: this.orderDetails
+        }
       };
       console.log(orderData);
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/order/save', orderData).then(function (response) {

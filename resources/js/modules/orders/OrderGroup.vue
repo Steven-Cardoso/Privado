@@ -85,10 +85,18 @@ export default {
             this.costumerDetails = customer;
         },
         handleOrderSave() {
+            let orderDetails = [];
+            this.orderDetails.forEach(item => {
+                orderDetails.push(item.id);
+            });
+
             let orderData = {
-                costumerDetails: this.costumerDetails,
-                finalAmount: this.finalAmount,
-                orderDetails: this.orderDetails
+                resto_id: this.restoId, 
+                order_data: {
+                    costumerDetails: this.costumerDetails,
+                    finalAmount: this.finalAmount,
+                    orderDetails: this.orderDetails
+                }
             };
             console.log(orderData);
             axios.post('/api/order/save', orderData).then(response => console.log('response', response));
