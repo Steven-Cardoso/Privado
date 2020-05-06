@@ -11,7 +11,8 @@
             <order-form @customerDetailsChanged = "customerDetailsHandle"></order-form>
             
             <h3>Detalhes da Ordem <span class="float-right" v-if="finalAmount > 0">Total a Pagar: {{finalAmount}} MZN</span></h3>
-            <order-details :order-details="orderDetails"></order-details>
+            <!-- <order-details :order-details="orderDetails"></order-details> -->
+            <OrderList :items="orderDetails"></OrderList>
         </div>
 
         <div class="col-md-5">
@@ -29,19 +30,22 @@ import OrderForm from './OrderForm';
 import OrderMenuItems from './OrderMenuItems';
 import axios from 'axios';
 import OrderDetails from './OrderDetails';
+import OrderList from './OrderList';
 
 export default {
     props: ['restoId'],
     components: {
         OrderForm,
         OrderMenuItems,
-        OrderDetails
+        OrderDetails,
+        OrderList
     },
     created() {
         this.loadRestoMenuItems();
         window.eventBus.$on('menuItemAdded', this.handleNewMenuItem);
         window.eventBus.$on('filteredList', this.handleFilteredList);
         window.eventBus.$on('clearFilteredList', this.handleClearFilteredList);
+        window.eventBus.$on('removeOrderedItem', this.handleRemoveOrderedItem);
         // window.eventBus.$on('customerDetailsChanged', this.)
 
     },
@@ -83,6 +87,9 @@ export default {
         },
         customerDetailsHandle(customer) {
             this.costumerDetails = customer;
+        },
+        handleRemoveOrderedItem(item) {
+            this.orderDetails = this.orderDetails.filter(orderDetails => orderDetails.id != item.id);
         },
         handleOrderSave() {
             let orderDetails = [];
