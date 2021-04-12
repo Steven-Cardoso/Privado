@@ -12,16 +12,24 @@
                                 Address: {{order.order_details.customer_address}}
                             </td>
                             <td>
-                                <button class="btn btn-sm btn-success">Completed</button> 
+                                <button class="btn btn-sm btn-success" @click="clickComplete(order)">Completo</button> 
                                 <br>
                                 <br>
-                                <button class="btn btn-sm btn-warning">Cancel</button> 
+                                <button class="btn btn-sm btn-warning" @click="clickDelete(order)">Cancel</button> 
                             </td>
                     </tr>
                 </tbody>
 </template>
 <script>
 export default {
-    props: ['orders']
+    props: ['orders'],
+    methods: {
+        clickComplete(order) {
+            this.$emit("onComplete", order);
+        },
+        clickDelete(order) {
+            this.$emit("onDelete", order);
+        }
+    }
 }
 </script>
