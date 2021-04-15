@@ -14,21 +14,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = \App\User::create([
+        /*$user = \App\User::create([
             'name' => 'Steven Cardoso',
             'email' => 'stevensousa22@gmail.com',
             'password' => bcrypt('password'),
-        ]);
+        ]);*/
 
-        $user->restaurants()->create([
-            'name' => 'Highway Star',
-            'location' => 'Bhuvandas Road, NH14 Dadar, Mumbai',
-        ]);
-
-        $user->restaurants()->create([
-            'name' => 'Mukesh Lunch Home',
-            'location' => 'Sai Balaji Tower, Airoli Navi Mumbai',
-        ]);
+        
 
         //User::truncate();
         //DB::table('role_user')->truncate();
@@ -37,8 +29,8 @@ class UsersTableSeeder extends Seeder
         $cozinheiroRole = Role::where('name', 'cozinheiro')->first();
 
         $admin = User::create([
-            'name'=>'Admin User',
-            'email'=>'admin@admin.com',
+            'name'=>'steven',
+            'email'=>'steven@admin.com',
             'password'=>Hash::make('password')
         ]);
             
@@ -57,6 +49,16 @@ class UsersTableSeeder extends Seeder
         $admin->roles()->attach($adminRole);
         $garcon->roles()->attach($garconRole);
         $cozinheiro->roles()->attach($cozinheiroRole);
+
+        $admin->restaurants()->create([
+            'name' => 'Highway Star',
+            'location' => 'Bhuvandas Road, NH14 Dadar, Mumbai',
+        ]);
+
+        $cozinheiro->restaurants()->create([
+            'name' => 'Mukesh Lunch Home',
+            'location' => 'Sai Balaji Tower, Airoli Navi Mumbai',
+        ]);
 
     }
 }
