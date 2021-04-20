@@ -7,7 +7,7 @@
                  <template slot="body">
                     O Farol, katembe
                     <br/>
-                    <a onclick="window.location.href='/restaurants/orders'" class="card-link">Orders</a>
+                    <button onclick="window.location.href='/restaurants/orders'" class="btn btn-link">Orders</button>
                  </template>
             </card-component>
             </div>

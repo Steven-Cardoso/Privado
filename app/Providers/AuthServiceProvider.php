@@ -37,6 +37,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('cozinheiro-user', function($user){
             return $user->hasRole('cozinheiro');
         });
+        Gate::define('garcon-user', function($user){
+            return $user->hasRole('garcon');
+        });
         Passport::routes();
 
     }

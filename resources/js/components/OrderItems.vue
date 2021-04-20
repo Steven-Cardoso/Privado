@@ -12,6 +12,9 @@
                                 Address: {{order.order_details.customer_address}}
                             </td>
                             <td>
+                               Detalhes: 
+                            </td>
+                            <td>
                                 <button class="btn btn-sm btn-success" @click="clickComplete(order)">Completo</button> 
                                 <br>
                                 <br>

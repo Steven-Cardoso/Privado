@@ -5,7 +5,7 @@
     <div class="row mb-3">
         <div class="col-md-12">
             {{-- <p>{{$resto}}</p> --}}
-            <h2>Home delivery order for</h2>
+            <h2>O Farol 2 "Pool Bar"</h2>
             <hr>
         </div>
     </div>

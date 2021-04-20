@@ -6,6 +6,7 @@
                         <th>Amount</th>
                         <th>Status</th>
                         <th>Customer details</th>
+                        <th>Customer items</th>
                         <th>Actions</th>
                     </tr>
                 </thead>

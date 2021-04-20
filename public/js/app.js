@@ -1954,6 +1954,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['orders'],
   methods: {
@@ -2209,6 +2212,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_OrderItems__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../components/OrderItems */ "./resources/js/components/OrderItems.vue");
+//
 //
 //
 //
@@ -38890,6 +38894,12 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("td", [
+          _vm._v(
+            "\n                          Detalhes: \n                       "
+          )
+        ]),
+        _vm._v(" "),
+        _c("td", [
           _c(
             "button",
             {
@@ -39306,6 +39316,8 @@ var staticRenderFns = [
         _c("th", [_vm._v("Status")]),
         _vm._v(" "),
         _c("th", [_vm._v("Customer details")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Customer items")]),
         _vm._v(" "),
         _c("th", [_vm._v("Actions")])
       ])
@@ -39893,9 +39905,9 @@ var render = function() {
                 _c("br"),
                 _vm._v(" "),
                 _c(
-                  "a",
+                  "button",
                   {
-                    staticClass: "card-link",
+                    staticClass: "btn btn-link",
                     attrs: {
                       onclick: "window.location.href='/restaurants/orders'"
                     }
