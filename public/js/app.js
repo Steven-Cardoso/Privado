@@ -2115,13 +2115,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['items', 'restoId'],
+  props: ['items'],
   components: {
     MultiSelect: vue_multiselect__WEBPACK_IMPORTED_MODULE_1___default.a,
     MenuGroups: _MenuGroups__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -2766,6 +2765,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2788,6 +2788,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    handleOrder: function handleOrder() {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.name('restos.orders');
+    },
     handleAddNewResto: function handleAddNewResto() {
       this.$modal.show('add-new-resto');
     },
@@ -38914,7 +38917,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Cancel")]
+            [_vm._v("Delete")]
           )
         ])
       ])
@@ -39176,10 +39179,7 @@ var render = function() {
                 { slot: "body" },
                 [
                   _c("menu-add-form", {
-                    attrs: {
-                      categories: _vm.categories,
-                      "resto-id": _vm.restoId
-                    },
+                    attrs: { categories: _vm.categories },
                     on: { newMenuItemAdded: _vm.handleNewMenuItem }
                   })
                 ],
@@ -39878,100 +39878,38 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "resto-group__wrapper mb-5" }, [
-    _c(
-      "div",
-      { staticClass: "row" },
-      [
-        _vm._l(_vm.localResto, function(resto) {
-          return _c(
-            "div",
-            { key: resto.id, staticClass: "col-md-4 mb-4" },
+    _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "col-lg-4 " },
+        [
+          _c(
+            "card-component",
             [
-              _c(
-                "card-component",
-                [
-                  _c("template", { slot: "title" }, [
-                    _vm._v(_vm._s(resto.name))
-                  ]),
-                  _vm._v(" "),
-                  _c("template", { slot: "body" }, [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(resto.location) +
-                        "\n                "
-                    ),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      { staticClass: "card-link", attrs: { href: resto.slug } },
-                      [_vm._v("Menu")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "card-link",
-                        attrs: { href: resto.ordersSlug }
-                      },
-                      [_vm._v("Orders")]
-                    )
-                  ])
-                ],
-                2
-              )
-            ],
-            1
-          )
-        }),
-        _vm._v(" "),
-        _vm.showAddForm
-          ? _c(
-              "div",
-              { staticClass: "col-md-4" },
-              [
-                _c(
-                  "card-component",
-                  [
-                    _c("template", { slot: "title" }, [
-                      _vm._v("Add new Restaurant")
-                    ]),
-                    _vm._v(" "),
-                    _c("template", { slot: "body" }, [
-                      _c("span", { on: { click: _vm.handleAddNewResto } }, [
-                        _vm._v("+")
-                      ])
-                    ])
-                  ],
-                  2
-                ),
+              _c("template", { slot: "title" }, [_vm._v("ORDERS")]),
+              _vm._v(" "),
+              _c("template", { slot: "body" }, [
+                _vm._v("\n                O Farol, katembe\n                "),
+                _c("br"),
                 _vm._v(" "),
                 _c(
-                  "modal",
-                  { attrs: { name: "add-new-resto", height: "55%" } },
-                  [
-                    _c(
-                      "div",
-                      { staticClass: "container-padding" },
-                      [
-                        _c("RestoAddForm", {
-                          on: {
-                            addRestoEvent: _vm.handleSaveResto,
-                            modalCancel: _vm.handleCancelResto
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ]
+                  "a",
+                  {
+                    staticClass: "card-link",
+                    attrs: {
+                      onclick: "window.location.href='/restaurants/orders'"
+                    }
+                  },
+                  [_vm._v("Orders")]
                 )
-              ],
-              1
-            )
-          : _vm._e()
-      ],
-      2
-    )
+              ])
+            ],
+            2
+          )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []

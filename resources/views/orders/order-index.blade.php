@@ -5,15 +5,17 @@
     <div class="row mb-3">
         <div class="col-md-12">
             {{-- <p>{{$resto}}</p> --}}
-            <h2>Manage Orders for {{$resto->name}}</h2>
+            <h2>Manage Orders for Farol 2</h2>
         </div>
     </div>
 <div class="row">
     <div class="col-md-12">       
     @if($orders->count()>0)
+
     <div class="mb-3 float-right">
-        <a href="{{route('resto.orders.add', $resto->id)}}" class="btn btn-primary">Add Order</a>
+        <a href="{{route('resto.orders.add')}}" class="btn btn-primary">Add Order</a>
     </div>
+
     <manage-orders :orders="{{ json_encode($orders) }}"></manage-orders>
             {{-- <table class="table table-hover table-bordered table-striped">
                 <thead>

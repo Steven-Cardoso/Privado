@@ -9,7 +9,7 @@ class RestoService
     public function userRestoAndTables()
     {
         return Auth::user()
-        ->restaurants()
-        ->get();
+        ->restaurants();
+        //->get();
     }
 }

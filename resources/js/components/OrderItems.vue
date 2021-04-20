@@ -15,7 +15,7 @@
                                 <button class="btn btn-sm btn-success" @click="clickComplete(order)">Completo</button> 
                                 <br>
                                 <br>
-                                <button class="btn btn-sm btn-warning" @click="clickDelete(order)">Cancel</button> 
+                                <button class="btn btn-sm btn-warning" @click="clickDelete(order)">Delete</button> 
                             </td>
                     </tr>
                 </tbody>

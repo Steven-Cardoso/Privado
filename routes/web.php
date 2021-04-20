@@ -29,8 +29,8 @@ Auth::routes();
 
 Route::group(['middleware'=>'auth'], function(){
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/restaurants', 'RestaurantController@index')->name('restos');
-    Route::get('/restaurants/menu/{id}','MenuController@index')->name('restos.menu');
-    Route::get('/restaurants/orders/{id}','RestaurantOrderController@index')->name('restos.orders');
-    Route::get('/restaurants/orders/{id}/add','RestaurantOrderController@add')->name('resto.orders.add');
+    //Route::get('/restaurants', 'RestaurantController@index')->name('restos');
+    Route::get('/restaurants/menu','MenuController@index')->name('restos.menu');
+    Route::get('/restaurants/orders','RestaurantOrderController@index')->name('pedidos');
+    Route::get('/restaurants/orders/add','RestaurantOrderController@add')->name('resto.orders.add');
 });

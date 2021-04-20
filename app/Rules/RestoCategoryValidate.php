@@ -7,16 +7,16 @@ use Illuminate\Contracts\Validation\Rule;
 
 class RestoCategoryValidate implements Rule
 {
-    private $restoId;
+    //private $restoId;
     /**
      * Create a new rule instance.
      *
      * @return void
-     */
+     *//*
     public function __construct($restoId)
     {
         $this->restoId = $restoId;
-    }
+    }*/
 
     /**
      * Determine if the validation rule passes.
@@ -27,7 +27,7 @@ class RestoCategoryValidate implements Rule
      */
     public function passes($attribute, $value)
     {
-        if(Category::where('name',$value)->where('resto_id',$this->restoId)->first()) {
+        if(Category::where('name',$value)->first()) {
             return true;
         }
 

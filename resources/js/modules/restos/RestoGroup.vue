@@ -1,17 +1,17 @@
 <template>
     <div class="resto-group__wrapper mb-5">
         <div class="row">
-            <div class="col-md-4 mb-4" v-for="resto in localResto" :key="resto.id">
+            <div class="col-lg-4 ">
             <card-component>
-                <template slot="title">{{resto.name}}</template>
-                <template slot="body">
-                    {{resto.location}}
+                <template slot="title">ORDERS</template>
+                 <template slot="body">
+                    O Farol, katembe
                     <br/>
-                    <a v-bind:href="resto.slug" class="card-link">Menu</a>
-                    <a v-bind:href="resto.ordersSlug" class="card-link">Orders</a>
-                    </template>
+                    <a onclick="window.location.href='/restaurants/orders'" class="card-link">Orders</a>
+                 </template>
             </card-component>
             </div>
+            <!--Vou mudar
             <div class="col-md-4" v-if="showAddForm">
                 <card-component>
                     <template slot="title">Add new Restaurant</template>
@@ -27,6 +27,7 @@
                     </div>
                 </modal>
             </div>
+            -->
         </div>
     </div>
 </template>
@@ -53,6 +54,9 @@ RestoAddForm
      }
  },
  methods: {
+     handleOrder(){
+     axios.name('restos.orders');
+     },
      handleAddNewResto() {
          this.$modal.show('add-new-resto');
      },

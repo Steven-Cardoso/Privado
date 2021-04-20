@@ -12,36 +12,35 @@ use Illuminate\Support\Facades\DB;
 
 class RestaurantOrderController extends Controller
 {
-    public function index($id)
+    public function index()
     {
-        $resto = Restaurant::find($id);
+        //$resto = Restaurant::find();
 
-        if(!$resto) {
+        /*if(!$resto) {
             abort(404, 'The Restaurant you are looking for is not present');
         }
-
-        $orders = Order::where('resto_id', $id)
-            ->orderBy('isComplete')
+*/
+        $orders = Order::orderBy('isComplete')
             ->orderByDesc('created_at')
             ->paginate(20);
 
         return view('orders.order-index')
-            ->with('orders', $orders)
-            ->with('resto',$resto);
+            ->with('orders', $orders);
+            //->with('resto',$resto);
     }
 
-    public function add($id) 
+    public function add() 
     {
-        $resto = Restaurant::findOrFail($id);
+        //$resto = Restaurant::findOrFail($id);
 
 
-        return view('orders.order-add')->with('resto', $resto);
+        return view('orders.order-add');
     }
 
     public function store(Request $request)
     {
       $postData = $this->validate($request, [
-          'resto_id' => 'required|exists:restaurants,id',
+         // 'resto_id' => 'required|exists:restaurants,id',
           'order_data' => 'required|array',
       ]);
 
@@ -54,7 +53,7 @@ class RestaurantOrderController extends Controller
 
             foreach ($itemIds as $id) {
                 $menu = Menu::query()
-                ->where('resto_id', $postData['resto_id'])
+                //->where('resto_id', $postData['resto_id'])
                 ->where('id', $id)
                 ->first();
 
@@ -64,7 +63,7 @@ class RestaurantOrderController extends Controller
             }
 
             $order = Order::create([
-                'resto_id' => $postData['resto_id'],
+                //'resto_id' => $postData['resto_id'],
                 'user_id' => Auth::user()->id,
                 'amount' => $orderTotal,
                 'isComplete' => 0,

@@ -22,7 +22,6 @@
                   <template slot="body">
                    <menu-add-form
                      :categories="categories"
-                     :resto-id="restoId"
                      v-on:newMenuItemAdded="handleNewMenuItem"
                    ></menu-add-form>
                    </template>
@@ -39,7 +38,7 @@ import MenuGroups from './MenuGroups';
 import MenuAddForm from './MenuAddForm';
 
 export default {
-    props: ['items', 'restoId'],
+    props: ['items'],
     components: {
         MultiSelect,
         MenuGroups,

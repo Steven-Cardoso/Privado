@@ -49,7 +49,7 @@ class UsersTableSeeder extends Seeder
         $admin->roles()->attach($adminRole);
         $garcon->roles()->attach($garconRole);
         $cozinheiro->roles()->attach($cozinheiroRole);
-
+/*
         $admin->restaurants()->create([
             'name' => 'Highway Star',
             'location' => 'Bhuvandas Road, NH14 Dadar, Mumbai',
@@ -59,6 +59,6 @@ class UsersTableSeeder extends Seeder
             'name' => 'Mukesh Lunch Home',
             'location' => 'Sai Balaji Tower, Airoli Navi Mumbai',
         ]);
-
+*/
     }
 }

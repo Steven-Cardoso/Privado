@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-   <menu-container :items="{{json_encode($menus)}}" :resto-id={{$restoId}}></menu-container>
+   <menu-container :items="{{json_encode($menus)}}"}></menu-container>
 </div>
 @endsection
  

@@ -13,7 +13,8 @@ class Order extends Model
         'order_details' => 'array'
     ];
 
-    public function restaurant(){
+    /*public function restaurant(){
         return $this->belongsTo(Restaurant::class, 'resto_id');
-    }
+    }*/
+    
 }

@@ -10,32 +10,32 @@ use App\Services\MenuService;
 
 class MenuController extends Controller
 {
-    public function index($id)
+    public function index()
     {
-        $restoId = $id;
+        //$restoId = $id;
         $service = new MenuService;
-        $menus = $service->getMenuWithCategory($restoId);
+        $menus = $service->getMenuWithCategory();
 
-        return view('menu.menu-index', compact('menus', 'restoId'));
+        return view('menu.menu-index', compact('menus'));
     }
     
     public function saveMenuItem(Request $request)
     {
         $postData = $this->validate($request, [
-            'restoId' => 'required|numeric',
+            //'restoId' => 'required|numeric',
             'price' => 'required|numeric',
             'item' => 'required',
             'description' => 'required|min:3',
-            'category' => ['required', new RestoCategoryValidate(request('restoId'))],
+            'category' => ['required', new RestoCategoryValidate()],
         ]);
 
-     $category = Category::where('resto_id', $postData['restoId'])->where('name', $postData['category'])->first();
+     $category = Category::where('name', $postData['category'])->first();
 
         $menu = Menu::create([
             'name' => $postData['item'],
             'price' => $postData['price'],
             'description' => $postData['description'],
-            'resto_id' => $postData['restoId'],
+            //'resto_id' => $postData['restoId'],
             'category_id' => $category->id,
 
         ]);
@@ -46,11 +46,8 @@ class MenuController extends Controller
 
     public function getRestoMenu(Request $request)
     {
-        $this->validate($request, [
-            'restoId'=>'required|exists:restaurants,id',
-        ]);
-        $menuItems = Menu::where('resto_id', $request->input('restoId'))
-            ->orderBy('category_id')
+        
+        $menuItems = Menu::orderBy('category_id')
             ->get();
         return response()->json($menuItems, 200);
     }

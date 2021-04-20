@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Order::class, function (Faker $faker) {
     return [
-        'resto_id' => 1,
+        //'resto_id' => 1,
         'user_id' => 1,
         'amount' => $faker->numberBetween(99, 500),
         'isComplete' => $faker->randomElement([1,0]),
