@@ -40,12 +40,12 @@ RestoAddForm
     },
  props: ['restos'],
  created() {
-     console.log('this.restos.length', this.restos.length);
+     //console.log('this.restos.length', this.restos.length);
      this.localResto = this.restos;
  },
  computed: {
      showAddForm() {
-         return (this.localResto.length < 5)?true:false;
+         //return (this.localResto.length < 5)?true:false;
      }
  },
  data() {

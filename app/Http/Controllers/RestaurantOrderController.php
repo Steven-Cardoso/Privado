@@ -67,6 +67,8 @@ class RestaurantOrderController extends Controller
                 'user_id' => Auth::user()->id,
                 'amount' => $orderTotal,
                 'isComplete' => 0,
+                'name' => Auth::user()->name,
+                'pratos' => $postData['order_data']['pratos'],
                 'order_details' => [
                     'items' => $postData['order_data']['orderDetails'],
                     'customer_name' => $postData['order_data']['costumerDetails']['name'],

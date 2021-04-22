@@ -1957,6 +1957,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['orders'],
   methods: {
@@ -2212,6 +2215,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_OrderItems__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../components/OrderItems */ "./resources/js/components/OrderItems.vue");
+//
 //
 //
 //
@@ -2510,6 +2514,13 @@ __webpack_require__.r(__webpack_exports__);
         price = price + order.price;
       });
       return price;
+    },
+    pratos: function pratos() {
+      var prato = "";
+      this.orderDetails.forEach(function (order) {
+        prato = prato + order.name;
+      });
+      return prato;
     }
   },
   data: function data() {
@@ -2561,6 +2572,7 @@ __webpack_require__.r(__webpack_exports__);
         order_data: {
           costumerDetails: this.costumerDetails,
           finalAmount: this.finalAmount,
+          pratos: this.pratos,
           orderDetails: this.orderDetails
         }
       };
@@ -2778,12 +2790,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: ['restos'],
   created: function created() {
-    console.log('this.restos.length', this.restos.length);
+    //console.log('this.restos.length', this.restos.length);
     this.localResto = this.restos;
   },
   computed: {
-    showAddForm: function showAddForm() {
-      return this.localResto.length < 5 ? true : false;
+    showAddForm: function showAddForm() {//return (this.localResto.length < 5)?true:false;
     }
   },
   data: function data() {
@@ -38895,7 +38906,17 @@ var render = function() {
         _vm._v(" "),
         _c("td", [
           _vm._v(
-            "\n                          Detalhes: \n                       "
+            "\n                          " +
+              _vm._s(order.pratos) +
+              "\n                       "
+          )
+        ]),
+        _vm._v(" "),
+        _c("td", [
+          _vm._v(
+            "\n                          " +
+              _vm._s(order.name) +
+              "\n                       "
           )
         ]),
         _vm._v(" "),
@@ -39317,7 +39338,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Customer details")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Customer items")]),
+        _c("th", [_vm._v("Pratos")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Mesa nr")]),
         _vm._v(" "),
         _c("th", [_vm._v("Actions")])
       ])

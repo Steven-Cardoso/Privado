@@ -56,6 +56,13 @@ export default {
                 price = price + order.price;
             });
             return price;
+        },
+        pratos() {
+            let prato = "";
+            this.orderDetails.forEach(order => {
+                prato = prato + order.name;
+            });
+            return prato;
         }
     },
     data() {
@@ -102,6 +109,7 @@ export default {
                 order_data: {
                     costumerDetails: this.costumerDetails,
                     finalAmount: this.finalAmount,
+                    pratos: this.pratos,
                     orderDetails: this.orderDetails
                 }
             };
