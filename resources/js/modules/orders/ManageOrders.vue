@@ -34,7 +34,7 @@ export default {
     methods: {
         handleOrderComplete(order)
         {
-            if (!confirm("Are you sure order is complete?")) {
+            if (!confirm("Tem a certeza que o seu pedido esta terminado?")) {
                 return;
             }
             const postData = {order_id: order.id};
@@ -47,7 +47,7 @@ export default {
             });
         },
         handleDeleteOrder(order){
-            if (!confirm("Are you sure you want to delete the order?")) {
+            if (!confirm("Tem a certeza que deseja apagar o pedido?")) {
                 return;
             }
             

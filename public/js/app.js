@@ -2251,7 +2251,7 @@ __webpack_require__.r(__webpack_exports__);
     handleOrderComplete: function handleOrderComplete(order) {
       var _this = this;
 
-      if (!confirm("Are you sure order is complete?")) {
+      if (!confirm("Tem a certeza que o seu pedido esta terminado?")) {
         return;
       }
 
@@ -2269,7 +2269,7 @@ __webpack_require__.r(__webpack_exports__);
     handleDeleteOrder: function handleDeleteOrder(order) {
       var _this2 = this;
 
-      if (!confirm("Are you sure you want to delete the order?")) {
+      if (!confirm("Tem a certeza que deseja apagar o pedido?")) {
         return;
       }
 
@@ -2460,6 +2460,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _OrderDetails__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./OrderDetails */ "./resources/js/modules/orders/OrderDetails.vue");
 /* harmony import */ var _OrderList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./OrderList */ "./resources/js/modules/orders/OrderList.vue");
+//
 //
 //
 //
@@ -39616,6 +39617,10 @@ var render = function() {
   return _c("div", [
     _c("div", { staticClass: "row mb-3" }, [
       _c("div", { staticClass: "col-md-12" }, [
+        _c("button", { staticClass: "btn btn-primary float-right ml-4" }, [
+          _vm._v("Solicitar Pagamento")
+        ]),
+        _vm._v(" "),
         _c(
           "button",
           {

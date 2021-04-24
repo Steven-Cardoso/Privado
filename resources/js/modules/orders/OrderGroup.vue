@@ -2,6 +2,7 @@
   <div>
       <div class="row mb-3">
           <div class="col-md-12">
+              <button class="btn btn-primary float-right ml-4">Solicitar Pagamento</button>
             <button @click="handleOrderSave" class="btn btn-success float-right">Save</button>
           </div>
       </div>
