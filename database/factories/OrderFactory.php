@@ -12,6 +12,7 @@ $factory->define(Order::class, function (Faker $faker) {
         'amount' => $faker->numberBetween(99, 500),
         'isComplete' => $faker->randomElement([1,0]),
         'completed_at' => $faker->date('Y-m-d h:m:s'),
+        'isPaid' => $faker->randomElement([1,0]),
         'name' => $faker->name,
         'pratos' => $faker->name,
         'order_details' => [

@@ -18,10 +18,16 @@
                                {{order.name}}
                             </td>
                             <td>
+                                {{(order.isPaid) ? 'Sim' : 'Nao'}}
+                            </td>
+                            <td>
                                 <button class="btn btn-sm btn-success" @click="clickComplete(order)">Completo</button> 
                                 <br>
                                 <br>
                                 <button class="btn btn-sm btn-warning" @click="clickDelete(order)">Delete</button> 
+                                <br>
+                                <br>
+                                <button class="btn btn-sm btn-warning" @click="clickPaid(order)">Pago</button> 
                             </td>
                     </tr>
                 </tbody>
@@ -35,6 +41,9 @@ export default {
         },
         clickDelete(order) {
             this.$emit("onDelete", order);
+        },
+        clickPaid(order) {
+            this.$emit("onPaid", order);
         }
     }
 }

@@ -67,6 +67,7 @@ class RestaurantOrderController extends Controller
                 'user_id' => Auth::user()->id,
                 'amount' => $orderTotal,
                 'isComplete' => 0,
+                'isPaid' => 0,
                 'name' => Auth::user()->name,
                 'pratos' => $postData['order_data']['pratos'],
                 'order_details' => [
@@ -109,6 +110,19 @@ class RestaurantOrderController extends Controller
         Order::where('id', $postData['order_id'])->delete();
 
         return response()->json("", 201); 
+    }
+
+    public function paid(Request $request)
+    {
+        $postData = $this->validate($request, [
+            'order_id' => ['required','exists:orders,id'],
+        ]);
+
+        $order = Order::find($postData['order_id']);
+        $order->isPaid= 1;
+        $order->save();
+
+        return response()->json($order, 201); 
     }
 }
  

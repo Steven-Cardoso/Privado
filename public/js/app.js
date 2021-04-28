@@ -1960,6 +1960,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['orders'],
   methods: {
@@ -1968,6 +1974,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     clickDelete: function clickDelete(order) {
       this.$emit("onDelete", order);
+    },
+    clickPaid: function clickPaid(order) {
+      this.$emit("onPaid", order);
     }
   }
 });
@@ -2232,6 +2241,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2279,6 +2290,24 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/order/remove", postData).then(function (response) {
         _this2.localOrders.data = _this2.localOrders.data.filter(function (localOrder) {
           return localOrder.id !== order.id;
+        });
+      });
+    },
+    handlePaid: function handlePaid(order) {
+      var _this3 = this;
+
+      if (!confirm("Tem a certeza que a conta foi paga?")) {
+        return;
+      }
+
+      var postData = {
+        order_id: order.id
+      };
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/order/paid", postData).then(function (response) {
+        _this3.localOrders.data.forEach(function (order, index) {
+          if (order.id === response.data.id) {
+            _this3.localOrders.data[index].isPaid = 1;
+          }
         });
       });
     }
@@ -38922,6 +38951,14 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("td", [
+          _vm._v(
+            "\n                           " +
+              _vm._s(order.isPaid ? "Sim" : "Nao") +
+              "\n                       "
+          )
+        ]),
+        _vm._v(" "),
+        _c("td", [
           _c(
             "button",
             {
@@ -38950,6 +38987,23 @@ var render = function() {
               }
             },
             [_vm._v("Delete")]
+          ),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-sm btn-warning",
+              on: {
+                click: function($event) {
+                  return _vm.clickPaid(order)
+                }
+              }
+            },
+            [_vm._v("Pago")]
           )
         ])
       ])
@@ -39317,7 +39371,8 @@ var render = function() {
         attrs: { orders: _vm.orders.data },
         on: {
           onComplete: _vm.handleOrderComplete,
-          onDelete: _vm.handleDeleteOrder
+          onDelete: _vm.handleDeleteOrder,
+          onPaid: _vm.handlePaid
         }
       })
     ],
@@ -39342,6 +39397,8 @@ var staticRenderFns = [
         _c("th", [_vm._v("Pratos")]),
         _vm._v(" "),
         _c("th", [_vm._v("Mesa nr")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Pago")]),
         _vm._v(" "),
         _c("th", [_vm._v("Accoes")])
       ])

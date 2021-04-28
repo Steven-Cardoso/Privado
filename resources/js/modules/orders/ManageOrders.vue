@@ -8,11 +8,13 @@
                         <th>Detalhes do cliente</th>
                         <th>Pratos</th> 
                         <th>Mesa nr</th>                       
+                        <th>Pago</th>
                         <th>Accoes</th>
+
                     </tr>
                 </thead>
 
-        <order-items :orders="orders.data" @onComplete="handleOrderComplete" @onDelete="handleDeleteOrder"></order-items>
+        <order-items :orders="orders.data" @onComplete="handleOrderComplete" @onDelete="handleDeleteOrder" @onPaid="handlePaid"></order-items>
     </table>
 </template>
 <script>
@@ -56,6 +58,19 @@ export default {
                 this.localOrders.data = this.localOrders.data.filter(localOrder => {
                     return localOrder.id !== order.id;
                 });
+            });
+        },
+        handlePaid(order){
+            if (!confirm("Tem a certeza que a conta foi paga?")) {
+                return;
+            }
+            const postData = {order_id: order.id};
+            axios.post("/api/order/paid", postData).then(response => {
+                this.localOrders.data.forEach((order, index) => {
+                    if (order.id === response.data.id) {
+                        this.localOrders.data[index].isPaid = 1;
+                    }
+                })
             });
         }
     }
