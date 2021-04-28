@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token()}}">
@@ -64,9 +65,14 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .letra {
+                color:beige;
+                font-family:'Courier New', Courier, monospace;
+                font-style: italic;
         </style>
     </head>
-    <body>
+    <body class="opacidade" style="background-image: url('imagem/lagosta.jpg')">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -81,12 +87,14 @@
                     @endauth
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    O Farol 2 <br>
+           <!-- <div class="hidden lg:block w-2/5 h-screen object-cover">
+                <img src="imagem/sopa.jpg" width="950px" height="563px"/>
+              </div>-->
+            <div class="content text-white">
+                <p class="title m-b-md letra">
+                    O Farol <br>
                     Pool Bar
-                </div>
+                </p>
 
                 {{-- <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>

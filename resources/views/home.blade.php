@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
    @can('cozinheiro-user')
    <div class="container">
@@ -31,7 +32,7 @@
       <div class="row mb-3">
           <div class="col-md-12">
               {{-- <p>{{$resto}}</p> --}}
-              <h2>O Farol 2 "Pool Bar"</h2>
+              <h2>O Farol "Pool Bar"</h2>
               <hr>
           </div>
       </div>

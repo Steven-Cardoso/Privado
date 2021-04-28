@@ -3,12 +3,12 @@
         <thead>
                     <tr>
                         <th>Order Id</th>
-                        <th>Amount</th>
-                        <th>Status</th>
-                        <th>Customer details</th>
+                        <th>Valor Total</th>
+                        <th>Estado</th>
+                        <th>Detalhes do cliente</th>
                         <th>Pratos</th> 
                         <th>Mesa nr</th>                       
-                        <th>Actions</th>
+                        <th>Accoes</th>
                     </tr>
                 </thead>
 

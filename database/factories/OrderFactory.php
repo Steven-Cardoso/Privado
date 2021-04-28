@@ -18,7 +18,7 @@ $factory->define(Order::class, function (Faker $faker) {
             'items' => [1,2,3],
             'customer_name' => $faker->name,
             'customer_phone' => $faker->phoneNumber,
-            'customer_address' => $faker->address,
+            'customer_address' => $faker->email,
         ]
     ];
 });

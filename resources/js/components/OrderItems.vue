@@ -2,14 +2,14 @@
      <tbody>
                     <tr v-for="order in orders" :key="order.id">
                         <td>{{order.id}}</td>
-                        <td>{{order.amount}}</td>
+                        <td>{{order.amount}} Mzn</td>
                         <td>{{(order.isComplete) ? 'Completed' : 'Incompleted'}}</td>
                         <td>
-                                Name: {{order.order_details.customer_name}}
+                                Nome: {{order.order_details.customer_name}}
                                 <br>
-                                Phone: {{order.order_details.customer_phone}}
+                                Telefone: {{order.order_details.customer_phone}}
                                 <br>
-                                Address: {{order.order_details.customer_address}}
+                                Email: {{order.order_details.customer_address}}
                             </td>
                             <td>
                                {{order.pratos}}

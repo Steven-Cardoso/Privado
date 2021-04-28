@@ -114,6 +114,7 @@ export default {
                     orderDetails: this.orderDetails
                 }
             };
+
             console.log(orderData);
             axios.post('/api/order/save', orderData).then(response => console.log('response', response));
         }

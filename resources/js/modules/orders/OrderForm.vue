@@ -2,17 +2,17 @@
     <div class="wrapper">
         <form action="#">
             <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name">Nome</label>
                 <input type="text" class="form-control" v-model="customer.name">
             </div>
 
             <div class="form-group">
-                <label for="name">Phone</label>
+                <label for="name">Telefone</label>
                 <input type="text" class="form-control" v-model="customer.phone">
             </div>
 
             <div class="form-group">
-                <label for="name">Address</label>
+                <label for="name">E-mail</label>
                 <input type="text" class="form-control" v-model="customer.address">
             </div>
         </form>

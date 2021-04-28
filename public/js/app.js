@@ -38879,7 +38879,7 @@ var render = function() {
       return _c("tr", { key: order.id }, [
         _c("td", [_vm._v(_vm._s(order.id))]),
         _vm._v(" "),
-        _c("td", [_vm._v(_vm._s(order.amount))]),
+        _c("td", [_vm._v(_vm._s(order.amount) + " Mzn")]),
         _vm._v(" "),
         _c("td", [
           _vm._v(_vm._s(order.isComplete ? "Completed" : "Incompleted"))
@@ -38887,19 +38887,19 @@ var render = function() {
         _vm._v(" "),
         _c("td", [
           _vm._v(
-            "\n                           Name: " +
+            "\n                           Nome: " +
               _vm._s(order.order_details.customer_name) +
               "\n                           "
           ),
           _c("br"),
           _vm._v(
-            "\n                           Phone: " +
+            "\n                           Telefone: " +
               _vm._s(order.order_details.customer_phone) +
               "\n                           "
           ),
           _c("br"),
           _vm._v(
-            "\n                           Address: " +
+            "\n                           Email: " +
               _vm._s(order.order_details.customer_address) +
               "\n                       "
           )
@@ -39333,17 +39333,17 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("Order Id")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Amount")]),
+        _c("th", [_vm._v("Valor Total")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Status")]),
+        _c("th", [_vm._v("Estado")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Customer details")]),
+        _c("th", [_vm._v("Detalhes do cliente")]),
         _vm._v(" "),
         _c("th", [_vm._v("Pratos")]),
         _vm._v(" "),
         _c("th", [_vm._v("Mesa nr")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Actions")])
+        _c("th", [_vm._v("Accoes")])
       ])
     ])
   }
@@ -39513,7 +39513,7 @@ var render = function() {
   return _c("div", { staticClass: "wrapper" }, [
     _c("form", { attrs: { action: "#" } }, [
       _c("div", { staticClass: "form-group" }, [
-        _c("label", { attrs: { for: "name" } }, [_vm._v("Name")]),
+        _c("label", { attrs: { for: "name" } }, [_vm._v("Nome")]),
         _vm._v(" "),
         _c("input", {
           directives: [
@@ -39539,7 +39539,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "form-group" }, [
-        _c("label", { attrs: { for: "name" } }, [_vm._v("Phone")]),
+        _c("label", { attrs: { for: "name" } }, [_vm._v("Telefone")]),
         _vm._v(" "),
         _c("input", {
           directives: [
@@ -39565,7 +39565,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "form-group" }, [
-        _c("label", { attrs: { for: "name" } }, [_vm._v("Address")]),
+        _c("label", { attrs: { for: "name" } }, [_vm._v("E-mail")]),
         _vm._v(" "),
         _c("input", {
           directives: [
