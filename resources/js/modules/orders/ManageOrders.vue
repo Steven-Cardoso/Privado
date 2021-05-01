@@ -69,6 +69,7 @@ export default {
                 this.localOrders.data.forEach((order, index) => {
                     if (order.id === response.data.id) {
                         this.localOrders.data[index].isPaid = 1;
+                        axios.post("/api/order/mail", this.localOrders.data[index]);
                     }
                 })
             });

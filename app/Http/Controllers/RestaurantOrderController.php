@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -8,6 +9,10 @@ use App\Order;
 use App\Models\Menu;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Output\OutputInterface;
+use Illuminate\Support\Facades\Log;
+use Mail;
+use App\Mail\emailFactura;
 
 
 class RestaurantOrderController extends Controller
@@ -121,8 +126,22 @@ class RestaurantOrderController extends Controller
         $order = Order::find($postData['order_id']);
         $order->isPaid= 1;
         $order->save();
-
         return response()->json($order, 201); 
+    }
+    
+    public function mail(Request $request)
+    {
+
+     
+        //error_log($request['order_details']['customer_name']);
+      
+
+       // Mail::send(new emailFactura($request['order_details']['customer_name']));
+        //Mail::to('example@email.com','User Name')->send(new emailFactura($request['order_details']['customer_name'],$request['order_details']['customer_address'],$request['pratos']));
+        //Mail::to('stevensousa23@gmail.com')->send(new emailFactura($request['order_details']['customer_name']));
+        //return new \App\Mail\emailFactura($request['order_details']['customer_name'],$request['order_details']['customer_address'],$request['pratos']);
+        \Illuminate\Support\Facades\Mail::send(new \App\Mail\emailFactura($request['order_details']['customer_name'],$request['order_details']['customer_address'],$request['pratos']));
+        return back();
     }
 }
  

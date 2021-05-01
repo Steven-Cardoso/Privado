@@ -2307,6 +2307,7 @@ __webpack_require__.r(__webpack_exports__);
         _this3.localOrders.data.forEach(function (order, index) {
           if (order.id === response.data.id) {
             _this3.localOrders.data[index].isPaid = 1;
+            axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/order/mail", _this3.localOrders.data[index]);
           }
         });
       });
