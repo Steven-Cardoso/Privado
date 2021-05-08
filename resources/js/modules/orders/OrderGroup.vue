@@ -17,11 +17,43 @@
         </div>
 
         <div class="col-md-5">
-            <h3>Menu</h3>
-            <order-menu-items 
-            :items="menuItems"
-            @menuItemAdded="handleNewMenuItem"
-            ></order-menu-items>
+            <b-tabs card>
+                <b-tab title="Soupas" @click="loadRestoMenuItems(1)">
+                    <h3>Menu</h3>
+                    <order-menu-items 
+                    :items="menuItems"
+                    @menuItemAdded="handleNewMenuItem"
+                    ></order-menu-items>
+                </b-tab>
+                <b-tab title="Frango" @click="loadRestoMenuItems(2)">
+                     <h3>Menu</h3>
+                    <order-menu-items 
+                    :items="menuItems"
+                    @menuItemAdded="handleNewMenuItem"
+                    ></order-menu-items>
+                </b-tab>
+                <b-tab title="Arroz" @click="loadRestoMenuItems(3)">
+                     <h3>Menu</h3>
+                    <order-menu-items 
+                    :items="menuItems"
+                    @menuItemAdded="handleNewMenuItem"
+                    ></order-menu-items>
+                </b-tab>
+                <b-tab title="Noodles" @click="loadRestoMenuItems(4)">
+                     <h3>Menu</h3>
+                    <order-menu-items 
+                    :items="menuItems"
+                    @menuItemAdded="handleNewMenuItem"
+                    ></order-menu-items>
+                </b-tab>
+                <b-tab title="Bebidas" @click="loadRestoMenuItems(4)">
+                     <h3>Menu</h3>
+                    <order-menu-items 
+                    :items="menuItems"
+                    @menuItemAdded="handleNewMenuItem"
+                    ></order-menu-items>
+                </b-tab>
+             </b-tabs>
         </div>
     </div>
   </div>
@@ -34,7 +66,7 @@ import OrderDetails from './OrderDetails';
 import OrderList from './OrderList';
 
 export default {
-    props: ['restoId'],
+    props: ['restoId','category_id'],
     components: {
         OrderForm,
         OrderMenuItems,
@@ -75,8 +107,8 @@ export default {
         }
     },
     methods: {
-        loadRestoMenuItems() {
-            let postData = {restoId: this.restoId}
+        loadRestoMenuItems(param) {
+            let postData = {category_id: param}
             axios.post('/api/resto/menu', postData)
             .then(response => { 
                 this.menuItems = response.data

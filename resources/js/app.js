@@ -7,12 +7,22 @@
 require('./bootstrap');
 require('vue-multiselect/dist/vue-multiselect.min.css');
 import VModal from 'vue-js-modal';
+import Vue from 'vue'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+// Import Bootstrap an BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 import Turbolinks from 'turbolinks';
 import TurbolinksAdapter from 'vue-turbolinks';
 Turbolinks.start();
 
 window.Vue = require('vue');
 
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
 
 Vue.use(VModal);
 /**
@@ -31,6 +41,10 @@ Vue.use(VModal);
 //These atre the global components
 
 Vue.component('card-component', require('./components/Card.vue').default);
+
+//Vue.component('tab-component', require('./components/Tab.vue').default);
+
+//Vue.component('tabs-component', require('./components/Tabs.vue').default);
 
 Vue.component('menu-container', require('./modules/menu/MenuContainer.vue').default);
 

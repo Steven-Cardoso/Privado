@@ -46,8 +46,11 @@ class MenuController extends Controller
 
     public function getRestoMenu(Request $request)
     {
-        
-        $menuItems = Menu::orderBy('category_id')
+        $postData = $this->validate($request, [
+            'category_id' => ['required','exists:categories,id'],
+        ]);
+
+        $menuItems = Menu::where('category_id', $postData['category_id'])
             ->get();
         return response()->json($menuItems, 200);
     }

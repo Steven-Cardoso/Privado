@@ -15,7 +15,7 @@ class MenusTableSeeder extends Seeder
     public function run()
     {
         $dummyCategory = collect([
-            'Soups','Chicken Main Course','Non-veg Rice', 'Non-veg Noodles'
+            'Soupas','Frango','Arroz', 'Noodles', 'Bebidas', 'Sobremesas'
         ]);
 
         $dummyCategory->each(function($value) {
