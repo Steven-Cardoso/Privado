@@ -1,8 +1,10 @@
  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                @can('delete-users')
                 <a class="navbar-brand" href="{{ route('home') }}">
                     Home
                 </a>
+                @endcan
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,7 +42,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    @can('manage-users')
+                                    @can('delete-users')
                                     <a class="dropdown-item" href="{{ route('admin.users.index') }}">
                                         User Management
                                     </a>

@@ -1,4 +1,5 @@
 <template>
+<body style="background-image:none">
     <table class="table table-hover table-bordered table-striped">
         <thead>
                     <tr>
@@ -16,6 +17,7 @@
 
         <order-items :orders="orders.data" @onComplete="handleOrderComplete" @onDelete="handleDeleteOrder" @onPaid="handlePaid"></order-items>
     </table>
+</body>
 </template>
 <script>
 import axios from "axios";

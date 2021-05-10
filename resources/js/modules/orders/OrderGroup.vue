@@ -2,8 +2,8 @@
   <div>
       <div class="row mb-3">
           <div class="col-md-12">
-              <button class="btn btn-primary float-right ml-4">Solicitar Pagamento</button>
-            <button @click="handleOrderSave" class="btn btn-success float-right">Save</button>
+              <!--<button class="btn btn-primary float-right ml-4">Solicitar Pagamento</button>-->
+            <button @click="handleOrderSave" class="btn btn-success float-right">Enviar Pedido</button>
           </div>
       </div>
     <div class="row">
@@ -46,7 +46,7 @@
                     @menuItemAdded="handleNewMenuItem"
                     ></order-menu-items>
                 </b-tab>
-                <b-tab title="Bebidas" @click="loadRestoMenuItems(4)">
+                <b-tab title="Bebidas" @click="loadRestoMenuItems(5)">
                      <h3>Menu</h3>
                     <order-menu-items 
                     :items="menuItems"
