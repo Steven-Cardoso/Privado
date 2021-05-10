@@ -13,6 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Illuminate\Support\Facades\Log;
 use Mail;
 use App\Mail\emailFactura;
+use Nexmo\Laravel\Facade\Nexmo;
 
 
 class RestaurantOrderController extends Controller
@@ -142,6 +143,16 @@ class RestaurantOrderController extends Controller
         //return new \App\Mail\emailFactura($request['order_details']['customer_name'],$request['order_details']['customer_address'],$request['pratos']);
         \Illuminate\Support\Facades\Mail::send(new \App\Mail\emailFactura($request['order_details']['customer_name'],$request['order_details']['customer_address'],$request['pratos']));
         return back();
+    }
+
+    public function sms(Request $request)
+    {
+        Nexmo::message()->send([
+            'to'=> $request['order_details']['customer_phone'],
+            'from' => 'O Farol',
+            'text' => 'Caro cliente:'+$request['order_details']['customer_name']+', o valor foi pago com sucesso!
+            Os itens consumidos foram:'+$request['pratos'],
+        ]);
     }
 }
  
