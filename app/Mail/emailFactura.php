@@ -41,6 +41,7 @@ class emailFactura extends Mailable
        //$this->cc("");
        $this->to($this->email,$this->nome);
 
-       return $this->view('email.email-payment');
+
+       return $this->view('email.email-payment',["nome"=>$this->nome,"data"=>$this->pratos]);
     }
 }
