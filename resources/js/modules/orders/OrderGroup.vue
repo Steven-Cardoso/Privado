@@ -4,6 +4,7 @@
           <div class="col-md-12">
               <!--<button class="btn btn-primary float-right ml-4">Solicitar Pagamento</button>-->
             <button @click="handleOrderSave" class="btn btn-success float-right">Enviar Pedido</button>
+            
           </div>
       </div>
     <div class="row">
@@ -65,6 +66,7 @@ import axios from 'axios';
 import OrderDetails from './OrderDetails';
 import OrderList from './OrderList';
 
+
 export default {
     props: ['restoId','category_id'],
     components: {
@@ -91,9 +93,10 @@ export default {
             return price;
         },
         pratos() {
-            let prato = "";
+            let prato = []; //prato="";
+            let plates = [];
             this.orderDetails.forEach(order => {
-                prato = prato + order.name;
+                prato = prato + order.name + "\n\t";
             });
             return prato;
         }
@@ -132,6 +135,7 @@ export default {
             this.orderDetails = this.orderDetails.filter(orderDetails => orderDetails.id != item.id);
         },
         handleOrderSave() {
+            alert('A ordem foi enviada com sucesso!');
             let orderDetails = [];
             this.orderDetails.forEach(item => {
                 orderDetails.push(item.id);

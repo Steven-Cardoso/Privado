@@ -141,7 +141,7 @@ class RestaurantOrderController extends Controller
         //Mail::to('example@email.com','User Name')->send(new emailFactura($request['order_details']['customer_name'],$request['order_details']['customer_address'],$request['pratos']));
         //Mail::to('stevensousa23@gmail.com')->send(new emailFactura($request['order_details']['customer_name']));
         //return new \App\Mail\emailFactura($request['order_details']['customer_name'],$request['order_details']['customer_address'],$request['pratos']);
-        \Illuminate\Support\Facades\Mail::send(new \App\Mail\emailFactura($request['order_details']['customer_name'],$request['order_details']['customer_address'],$request['pratos']));
+        \Illuminate\Support\Facades\Mail::send(new \App\Mail\emailFactura($request['order_details']['customer_name'],$request['order_details']['customer_address'],$request['pratos'],$request['amount']));
         return back();
     }
 

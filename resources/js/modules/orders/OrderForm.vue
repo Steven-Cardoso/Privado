@@ -3,17 +3,17 @@
         <form action="#">
             <div class="form-group">
                 <label for="name">Nome</label>
-                <input type="text" class="form-control" v-model="customer.name">
+                <input placeholder="Ex: Steven Cardoso" type="text" class="form-control" v-model="customer.name">
             </div>
 
             <div class="form-group">
                 <label for="name">Telefone</label>
-                <input type="text" class="form-control" v-model="customer.phone">
+                <input placeholder="Ex: 84694945" type="text" class="form-control" v-model="customer.phone">
             </div>
 
             <div class="form-group">
                 <label for="name">E-mail</label>
-                <input type="text" class="form-control" v-model="customer.address">
+                <input placeholder="Ex: ofarol@gmail.com" type="text" class="form-control" v-model="customer.address">
             </div>
         </form>
     </div>
