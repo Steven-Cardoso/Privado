@@ -1,4 +1,5 @@
 <template>
+
   <div>
       <div class="row mb-3">
           <div class="col-md-12">
@@ -7,17 +8,40 @@
             
           </div>
       </div>
-    <div class="row">
-        <div class="col-md-7">
-            <h3>Detalhes do Cliente</h3>
-            <order-form @customerDetailsChanged = "customerDetailsHandle"></order-form>
+      <b-carousel
+      id="carousel-1"
+      v-model="slide"
+      :interval="0"
+      controls
+      indicators
+      background="#ababab"
+      img-width="1024"
+      img-height="720"
+      style="text-shadow: 1px 1px 2px #333;"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
+    >
+      <b-carousel-slide
+        caption="Detalhes do Cliente"
+        text="Introduza os seus dados."
+        img-src="https://picsum.photos/1024/720/?image=52"
+        
+      >
+   
+            <!--<h3>Detalhes do Cliente</h3>-->
             
-            <h3>Detalhes da Ordem <span class="float-right" v-if="finalAmount > 0">Total a Pagar: {{finalAmount}} MZN</span></h3>
+            <order-form class="top-0" @customerDetailsChanged = "customerDetailsHandle"></order-form>
             <!-- <order-details :order-details="orderDetails"></order-details> -->
-            <OrderList :items="orderDetails"></OrderList>
-        </div>
-
-        <div class="col-md-5">
+  
+      </b-carousel-slide>
+      <b-carousel-slide img-src="https://picsum.photos/1024/720/?image=54">
+        <h1>Detalhes da Ordem!</h1>
+        <div class="row">
+    <div class="col-md-5">
+        <h3><span class="" v-if="finalAmount > 0">Total a Pagar: {{finalAmount}} MZN</span></h3>
+        <OrderList :items="orderDetails"></OrderList>
+    </div>
+        <div class="col-md-7">
             <b-tabs card>
                 <b-tab title="Soupas" @click="loadRestoMenuItems(1)">
                     <h3>Menu</h3>
@@ -56,7 +80,9 @@
                 </b-tab>
              </b-tabs>
         </div>
-    </div>
+        </div>
+    </b-carousel-slide>
+      </b-carousel>
   </div>
 </template>
 <script>
