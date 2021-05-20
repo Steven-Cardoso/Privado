@@ -2,8 +2,8 @@
     <ul class="list-group">
         <li class="list-group-item" v-for="(item, key) in items" :key="key">
             <div class="row">
-                <div class="col-md-10">
-                    {{item.name}} <span class="float-right">{{item.price}}</span>
+                <div class="col-md-10 text-dark">
+                    {{item.name}} <span class="float-right">{{item.price}} MZN</span>
                     <br>
                     <small>{{item.category.name}}</small>
                 </div>
@@ -24,3 +24,12 @@ export default {
     }
 }
 </script>
+<style>
+.list-group{
+    max-height: 400px;
+    min-height: 400px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+</style>

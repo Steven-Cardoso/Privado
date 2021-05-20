@@ -3,10 +3,10 @@
     <div v-if="items && items.length > 0">
       <ul class="list-group mb-3">
         <li class="list-group-item" v-for="(item, key) in items" :key="key">
-          <div>
+          <div class="text-dark">
             <strong>{{item.name}}</strong>, <small>{{item.category.name}}</small>
             <span class="float-right">
-              {{item.price}}
+              {{item.price}} 
               <span class="ml-3 pointer" @click="handleRemoveItem(item)">X</span>
               </span>
           </div>
@@ -15,7 +15,7 @@
     </div>
 
     <div v-else>
-      <p>No items ordered yet</p>
+      <p>Sem itens.</p>
     </div>
   </div>  
 </template>

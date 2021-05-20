@@ -16,21 +16,22 @@
       indicators
       background="#ababab"
       img-width="1024"
-      img-height="720"
+      img-height="1024"
       style="text-shadow: 1px 1px 2px #333;"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >
+    
       <b-carousel-slide
         caption="Detalhes do Cliente"
         text="Introduza os seus dados."
         img-src="https://picsum.photos/1024/720/?image=52"
-        
+        class="align-middle"        
       >
    
             <!--<h3>Detalhes do Cliente</h3>-->
             
-            <order-form class="top-0" @customerDetailsChanged = "customerDetailsHandle"></order-form>
+            <order-form class="align-top" @customerDetailsChanged = "customerDetailsHandle"></order-form>
             <!-- <order-details :order-details="orderDetails"></order-details> -->
   
       </b-carousel-slide>
@@ -43,35 +44,42 @@
     </div>
         <div class="col-md-7">
             <b-tabs card>
-                <b-tab title="Soupas" @click="loadRestoMenuItems(1)">
+                <b-tab title="Entradas" active @click="loadRestoMenuItems(1)">
                     <h3>Menu</h3>
                     <order-menu-items 
                     :items="menuItems"
                     @menuItemAdded="handleNewMenuItem"
                     ></order-menu-items>
                 </b-tab>
-                <b-tab title="Frango" @click="loadRestoMenuItems(2)">
+                <b-tab title="Salgadinhos" @click="loadRestoMenuItems(2)">
                      <h3>Menu</h3>
                     <order-menu-items 
                     :items="menuItems"
                     @menuItemAdded="handleNewMenuItem"
                     ></order-menu-items>
                 </b-tab>
-                <b-tab title="Arroz" @click="loadRestoMenuItems(3)">
+                <b-tab title="Mariscos" @click="loadRestoMenuItems(3)">
                      <h3>Menu</h3>
                     <order-menu-items 
                     :items="menuItems"
                     @menuItemAdded="handleNewMenuItem"
                     ></order-menu-items>
                 </b-tab>
-                <b-tab title="Noodles" @click="loadRestoMenuItems(4)">
+                <b-tab title="Refeições" @click="loadRestoMenuItems(4)">
                      <h3>Menu</h3>
                     <order-menu-items 
                     :items="menuItems"
                     @menuItemAdded="handleNewMenuItem"
                     ></order-menu-items>
                 </b-tab>
-                <b-tab title="Bebidas" @click="loadRestoMenuItems(5)">
+                <b-tab title="Sobremesa" @click="loadRestoMenuItems(5)">
+                     <h3>Menu</h3>
+                    <order-menu-items 
+                    :items="menuItems"
+                    @menuItemAdded="handleNewMenuItem"
+                    ></order-menu-items>
+                </b-tab>
+                <b-tab title="Bebidas" @click="loadRestoMenuItems(6)">
                      <h3>Menu</h3>
                     <order-menu-items 
                     :items="menuItems"
@@ -102,7 +110,7 @@ export default {
         OrderList
     },
     created() {
-        this.loadRestoMenuItems();
+        this.loadRestoMenuItems(1);
         window.eventBus.$on('menuItemAdded', this.handleNewMenuItem);
         window.eventBus.$on('filteredList', this.handleFilteredList);
         window.eventBus.$on('clearFilteredList', this.handleClearFilteredList);
@@ -137,7 +145,7 @@ export default {
     },
     methods: {
         loadRestoMenuItems(param) {
-            let postData = {category_id: param}
+            let postData = {category_id:param}
             axios.post('/api/resto/menu', postData)
             .then(response => { 
                 this.menuItems = response.data

@@ -1,4 +1,4 @@
- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+ <nav class="navbar navbar-expand-md navbar-light bg-blue shadow-sm">
             <div class="container">
                 @can('delete-users')
                 <a class="navbar-brand" href="{{ route('home') }}">

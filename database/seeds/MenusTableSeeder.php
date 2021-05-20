@@ -15,87 +15,320 @@ class MenusTableSeeder extends Seeder
     public function run()
     {
         $dummyCategory = collect([
-            'Soupas','Frango','Arroz', 'Noodles', 'Bebidas', 'Sobremesas'
+            'Entradas','Salgadinhos','Mariscos','Refeições','Sobremesa', 'Bebidas', 'Sobremesas'
         ]);
 
         $dummyCategory->each(function($value) {
             factory(Category::class)->create(['name' => $value]);
         });
 
-        $this->addSoups();
-        $this->addMainCourse();
-        $this->addNonVegRice();
-        $this->addNonVegNodles();
+        $this->addEntradas();
+        $this->addSalgadinhos();
+        $this->addMariscos();
+        $this->addRefeicoes();
+        $this->addSobremesas();
+        $this->addBebidas();
     }
 
-    private function addSoups()
+    private function addEntradas()
     {
         factory(Menu::class)->create([
-            'name' => 'Chicken Barmee Soup',
-            'price' => 170,
+            'name' => 'Cabeças de Lula Panadas',
+            'price' => 450,
             'category_id' => 1,
-            'description' => 'Chicken soup is a soup made from chicken, simmered in water, usually with
-            various others ingredients. The classic chicken soup consists of a clear chicken broth, often 
-            with pieces of chicken or vegetables; common additions are pasta, dumplings, or gains such
-            as rice and barley.'
+            'description' => 'Cabeças de Lula.'
         ]);
 
         factory(Menu::class)->create([
-            'name' => 'Chicken Beijing Soup',
-            'price' => 160,
+            'name' => 'Camarões Panados',
+            'price' => 500,
             'category_id' => 1,
-            'description' => 'Definitely a healthy soup for the whole family. Heat oil in a cooking pan,
-            add chopped ginger, beef mince and saute it. Now add finely chopped onion, chopped mushroom,
-            carrots, soya sauce, crushed black pepper, spring onion mix it well. Add beef or chicken 
-            stock cook until mince soft.'
+            'description' => 'Camarões Panados.'
         ]);
     
         factory(Menu::class)->create([
-            'name' => 'Chicken Wanton Soup',
-            'price' => 160,
+            'name' => 'Pops de Frango',
+            'price' => 450,
             'category_id' => 1,
-            'description' => 'Chicken Wonton Soup Wonton, which translates to swallowing a cloud, is a 
-            great way to describe how light these dumplings are. Ground chicken, green onions and 
-            flavorings are mixed together then wrapped in wonton wrappers then cooked in a delicious broth
-            for a light and healthy soup.'
+            'description' => 'Pops de frango.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Camarões a Fufuta',
+            'price' => 350,
+            'category_id' => 1,
+            'description' => 'Camarões a Fufuta.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Camarão Alhinho',
+            'price' => 500,
+            'category_id' => 1,
+            'description' => 'Camarão Alhinho.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Chouriço',
+            'price' => 400,
+            'category_id' => 1,
+            'description' => 'Chouriço.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Ameijoa',
+            'price' => 450,
+            'category_id' => 1,
+            'description' => 'Ameijoa.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Mexilhões',
+            'price' => 800,
+            'category_id' => 1,
+            'description' => 'Mexilhões.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Pão de Alho',
+            'price' => 200,
+            'category_id' => 1,
+            'description' => 'Pão de Alho.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Ostras 12 unidades',
+            'price' => 1000,
+            'category_id' => 1,
+            'description' => 'Ostras 12 unidades.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => '1kg de Camarão Cozido',
+            'price' => 500,
+            'category_id' => 1,
+            'description' => '1kg de Camarão Cozido.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Prego no pão com batatas fritas',
+            'price' => 300,
+            'category_id' => 1,
+            'description' => 'Prego no pão com batatas fritas.'
+        ]);
+    
+        factory(Menu::class)->create([
+            'name' => 'Prego no prato com ovo, batata e salada',
+            'price' => 500,
+            'category_id' => 1,
+            'description' => 'Prego no prato com ovo, batata e salada.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Mutlhutlhu de carne/peixe com pão',
+            'price' => 300,
+            'category_id' => 1,
+            'description' => 'Mutlhutlhu de carne/peixe com pão.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Moelas Estufadas',
+            'price' => 300,
+            'category_id' => 1,
+            'description' => 'Moelas Estufadas.'
         ]);
     }
 
-    private function addMainCourse()
+    private function addSalgadinhos()
     {
         factory(Menu::class)->create([
-            'name' => 'Grilled Chicken Panini',
-            'price' => 290,
+            'name' => 'Rissóis',
+            'price' => 250,
             'category_id' => 2,
-            'description' => 'Fresh mozzarella, roasted red peppers, sliced tomatoes, mixed field greens 
-            and balsamic vinaigrette.'
+            'description' => 'Rissóis.'
         ]);
 
         factory(Menu::class)->create([
-            'name' => 'Sapo Chicken',
-            'price' => 310,
+            'name' => 'Chamussas',
+            'price' => 250,
             'category_id' => 2,
-            'description' => 'Sapo Chicken is Chinese Indonesian tofu dish traditionally cooked and
-            served in claypot. Sapo chicken might be served plainly as vegetarian dish, or commonly 
-            enrichen with chicken, seafood (especially shrimp), minced beef or pork.'
+            'description' => 'Chamussas.'
         ]);
 
         factory(Menu::class)->create([
-            'name' => 'Chicken Black Bean',
-            'price' => 270,
+            'name' => 'Spring roll',
+            'price' => 250,
             'category_id' => 2,
-            'description' => 'Fermented black beans are found in Asian markets and once you buy them,
-            they last pretty much forever! Also called salted black beans, they\'re used in the black.
-            bean chicken you order from Chinese take-out and has a much different flavour than the Mexican type of black beans.'
+            'description' => 'Spring roll.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Pastéis de Bacalhau',
+            'price' => 250,
+            'category_id' => 2,
+            'description' => 'Pastéis de Bacalhau.'
         ]);
     }
 
-    private function addNonVegRice()
+    private function addMariscos()
+    {
+        factory(Menu::class)->create([
+            'name' => 'Camarão Grelhado
+            3 Camarões TG c/batatas fritas e salada',
+            'price' => 3000,
+            'category_id' => 3,
+            'description' => 'Camarão Grelhado
+            3 Camarões TG c/batatas fritas e salada.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Camarão Grelhado
+            6 Camarões G c/batatas fritas e salada',
+            'price' => 2100,
+            'category_id' => 3,
+            'description' => 'Camarão Grelhado
+            6 Camarões G c/batatas fritas e salada.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Camarão Grelhado
+            6 Camarões M c/batatas fritas e salada',
+            'price' => 1800,
+            'category_id' => 3,
+            'description' => 'Camarão Grelhado
+            6 Camarões M c/batatas fritas e salada.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Camarão Grelhado
+            10 Camarões 2/S c/batatas fritas e salada',
+            'price' => 700,
+            'category_id' => 3,
+            'description' => 'Camarão Grelhado
+            10 Camarões 2/S c/batatas fritas e salada.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Camarão a Kilo
+            1/2 kg de Camarão médio frito',
+            'price' => 1000,
+            'category_id' => 3,
+            'description' => 'Camarão a Kilo
+            1/2 kg de Camarão médio frito.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Camarão a Kilo
+            1 kg de Camarão médio frito',
+            'price' => 1000,
+            'category_id' => 3,
+            'description' => 'Camarão a Kilo
+            1 kg de Camarão médio frito.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Mix de lulas e 5 camarões S grelhados
+            com batata e salada',
+            'price' => 1350,
+            'category_id' => 3,
+            'description' => 'Mix de lulas e 5 camarões S grelhados
+            com batata e salada.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Frigideira de marisco a FAROL
+            (Porção de peixe, lulas, camarão com batata arroz e salada) Para 2 Pessoas',
+            'price' => 3500,
+            'category_id' => 3,
+            'description' => 'Frigideira de marisco a FAROL
+            (Porção de peixe, lulas, camarão com batata arroz e salada) Para 2 Pessoas.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Frigideira de marisco a FAROL
+            (Porção de peixe, lulas, camarão com batata arroz e salada) Para 4 Pessoas',
+            'price' => 5500,
+            'category_id' => 3,
+            'description' => 'Frigideira de marisco a FAROL
+            (Porção de peixe, lulas, camarão com batata arroz e salada) Para 4 Pessoas.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Travessa de 30 camarões grelhados(grandes) King',
+            'price' => 7000,
+            'category_id' => 3,
+            'description' => 'Travessa de 30 camarões grelhados(grandes) King.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Travessa de 30 camarões grelhados(médios) Queen',
+            'price' => 5000,
+            'category_id' => 3,
+            'description' => 'Travessa de 30 camarões grelhados(médios) Queen.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Travessa de 30 camarões grelhados(médios) S',
+            'price' => 3000,
+            'category_id' => 3,
+            'description' => 'Travessa de 30 camarões grelhados(médios) S.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => '10 Lagostins',
+            'price' => 3000,
+            'category_id' => 3,
+            'description' => '10 Lagostins.'
+        ]);
+        
+        factory(Menu::class)->create([
+            'name' => '20 Lagostins',
+            'price' => 5000,
+            'category_id' => 3,
+            'description' => '20 Lagostins.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Peixe de prato para uma pessoa vermelhão',
+            'price' => 900,
+            'category_id' => 3,
+            'description' => 'Peixe de prato para uma pessoa vermelhão.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Peixe de prato para uma pessoa Garoupa',
+            'price' => 1200,
+            'category_id' => 3,
+            'description' => 'Peixe de prato para uma pessoa Garoupa.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Peixe de prato para uma pessoa filete de peixe',
+            'price' => 1200,
+            'category_id' => 3,
+            'description' => 'Peixe de prato para uma pessoa filete de peixe.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Peixe de prato para uma pessoa 4 Sardinhas batata coziza e salada',
+            'price' => 650,
+            'category_id' => 3,
+            'description' => 'Peixe de prato para uma pessoa 4 Sardinhas batata coziza e salada.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Peixe de prato para uma pessoa Salmão à Farol',
+            'price' => 1500,
+            'category_id' => 3,
+            'description' => 'Peixe de prato para uma pessoa Salmão à Farol.'
+        ]);
+    }
+
+    private function addRefeicoes()
     {
         factory(Menu::class)->create([
             'name' => 'Chicken Fried Rice',
             'price' => 220,
-            'category_id' => 3,
+            'category_id' => 4,
             'description' => 'Fried rice is dish of cooked rice that has been stir-fried in a wok or a frying pan
             and is usually mixed with other ingredients such as eggs, vegetables, seafood, or meat.It is often eaten 
             by itself or as an accompaniment to another dish.'
@@ -104,7 +337,7 @@ class MenusTableSeeder extends Seeder
         factory(Menu::class)->create([
             'name' => 'Hainanese Chicken Rice',
             'price' => 250,
-            'category_id' => 3,
+            'category_id' => 4,
             'description' => 'Hainenese chicken rice is a dish adapted from early Chinese immigrants originally from
             Hainan province in southern China, where it\'s called Wenchang chicken. It is considered one of the national
             dishes of Singapore.'
@@ -113,41 +346,332 @@ class MenusTableSeeder extends Seeder
         factory(Menu::class)->create([
             'name' => 'Chicken Chettinad',
             'price' => 280,
-            'category_id' => 3,
+            'category_id' => 4,
             'description' => 'Chicken Chettinad or Chettinad chicken is a classic Indian recipe, from the cuisine of Chettinad. 
             It consists of chicken marineted. in yogurt, tumeric and a paste of red chillies, kalpasi, coconut, poppy seeds, 
             coriander seeds, cumin seeds, fennel seeds, black pepper, ground nuts, onions, garlic and gingelly oil. '
         ]); 
     }
 
-    private function addNonVegNodles()
+    private function addSobremesas()
     {
         factory(Menu::class)->create([
-            'name' => 'Cart noodle',
-            'price' => 220,
-            'category_id' => 4,
-            'description' => 'Cart noodle is a kind of a la carte noodle which beacame popular in Hong
-            Kong in the 1950s through independent street vendors operating on roadsides and in public 
-            housing estates in low-income districts, using carts.'
+            'name' => 'Bebinca',
+            'price' => 250,
+            'category_id' => 5,
+            'description' => 'Bebinca.'
         ]);  
 
         factory(Menu::class)->create([
-            'name' => 'Chongqing noodles',
-            'price' => 260,
-            'category_id' => 4,
-            'description' => 'Xiao mian is a traditional breakfast dish in Chongqing that is widely
-            consumed by Chongqing residents. It has been described as a staple food of Chongqing, 
-            and is an historic part of the cuisine there.'
+            'name' => 'Mousse(Chocolocate ou Malambe)',
+            'price' => 250,
+            'category_id' => 5,
+            'description' => 'Mousse(Chocolocate ou Malambe).'
         ]);  
 
         factory(Menu::class)->create([
-            'name' => 'Chow mein noodle',
-            'price' => 280,
-            'category_id' => 4,
-            'description' => 'Chow mein or Chinese stir-fried noodles, the name being the romanization
-            of the Taishanese chau-meing. The dish is popular throughout the Chinese diaspora and appears
-            on the menus of most Chinese restaurants.'
+            'name' => 'Magnum',
+            'price' => 180,
+            'category_id' => 5,
+            'description' => 'Magnum.'
         ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Cornetos',
+            'price' => 200,
+            'category_id' => 5,
+            'description' => 'Cornetos.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Chá',
+            'price' => 70,
+            'category_id' => 5,
+            'description' => 'Chá.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Café',
+            'price' => 80,
+            'category_id' => 5,
+            'description' => 'Café.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Galão',
+            'price' => 150,
+            'category_id' => 5,
+            'description' => 'Galão.'
+        ]);
+
+        factory(Menu::class)->create([
+            'name' => 'Cappuccino',
+            'price' => 150,
+            'category_id' => 5,
+            'description' => 'Cappuccino.'
+        ]);
+    }
+
+    private function addBebidas()
+    {
+        factory(Menu::class)->create([
+            'name' => 'Água pequena 500ml',
+            'price' => 70,
+            'category_id' => 6,
+            'description' => 'Água vumba 500ml.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Água grande 1.5l',
+            'price' => 120,
+            'category_id' => 6,
+            'description' => 'Água grande vumba 1.5l .'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Água das pedras',
+            'price' => 120,
+            'category_id' => 6,
+            'description' => 'Água das pedras.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Sumo Ceres pequeno',
+            'price' => 80,
+            'category_id' => 6,
+            'description' => 'Sumo Ceres pequeno.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Sumo Compal/Santal 0.5l',
+            'price' => 140,
+            'category_id' => 6,
+            'description' => 'Sumo Compal/Santal 0.5l.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Sumo Compal/Santal 0.5l',
+            'price' => 140,
+            'category_id' => 6,
+            'description' => 'Sumo Compal/Santal 0.5l.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Sumo Ceres 1l',
+            'price' => 250,
+            'category_id' => 6,
+            'description' => 'Sumo Ceres 1l.'
+        ]);
+        
+        factory(Menu::class)->create([
+            'name' => 'Sumo Compal 1l',
+            'price' => 250,
+            'category_id' => 6,
+            'description' => 'Sumo Compal 1l.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Red Bull',
+            'price' => 180,
+            'category_id' => 6,
+            'description' => 'Red Bull.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Refresco à lata(Sprite, Tónica, Minute Maid, Soda, Ginger ale,...)',
+            'price' => 90,
+            'category_id' => 6,
+            'description' => 'Refresco à lata(Sprite, Tónica, Minute Maid, Soda, Ginger ale,...)'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Txilar à Garrafa',
+            'price' => 120,
+            'category_id' => 6,
+            'description' => 'Txilar à Garrafa.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => '2M/Manica/Laurentina',
+            'price' => 120,
+            'category_id' => 6,
+            'description' => '2M/Manica/Laurentina.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Castle Lite',
+            'price' => 120,
+            'category_id' => 6,
+            'description' => 'Castle Lite.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Amstel lite/lager',
+            'price' => 120,
+            'category_id' => 6,
+            'description' => 'Amstel lite/lager.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Super bock mini',
+            'price' => 120,
+            'category_id' => 6,
+            'description' => 'Super bock mini.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Heineken Pequena',
+            'price' => 140,
+            'category_id' => 6,
+            'description' => 'Heineken Pequena.'
+        ]);  
+
+        factory(Menu::class)->create([
+            'name' => 'Budweiser',
+            'price' => 140,
+            'category_id' => 6,
+            'description' => 'Budweiser.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Savana Dry',
+            'price' => 140,
+            'category_id' => 6,
+            'description' => 'Savana Dry.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Hunters Gold/Dry',
+            'price' => 140,
+            'category_id' => 6,
+            'description' => 'Hunters Gold/Dry.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Spin',
+            'price' => 140,
+            'category_id' => 6,
+            'description' => 'Spin.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Strongbow',
+            'price' => 200,
+            'category_id' => 6,
+            'description' => 'Strongbow.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Bacardi Breezer',
+            'price' => 200,
+            'category_id' => 6,
+            'description' => 'Bacardi Breezer.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Stella',
+            'price' => 200,
+            'category_id' => 6,
+            'description' => 'Stella.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Twist',
+            'price' => 200,
+            'category_id' => 6,
+            'description' => 'Twist.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Sol',
+            'price' => 200,
+            'category_id' => 6,
+            'description' => 'Sol.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Corona',
+            'price' => 200,
+            'category_id' => 6,
+            'description' => 'Corona.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Vodka com Redbull',
+            'price' => 300,
+            'category_id' => 6,
+            'description' => 'Vodka com Redbull.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Tipo tinto',
+            'price' => 200,
+            'category_id' => 6,
+            'description' => 'Tipo tinto.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Caipirinha',
+            'price' => 350,
+            'category_id' => 6,
+            'description' => 'Caipirinha.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Copo de Txilar',
+            'price' => 100,
+            'category_id' => 6,
+            'description' => 'Copo de Txilar.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Copo de 2M',
+            'price' => 100,
+            'category_id' => 6,
+            'description' => 'Copo de 2M.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Caneca de Txilar',
+            'price' => 150,
+            'category_id' => 6,
+            'description' => 'Caneca de Txilar.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Caneca de 2M',
+            'price' => 150,
+            'category_id' => 6,
+            'description' => 'Caneca de 2M.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Copo de Heineken',
+            'price' => 160,
+            'category_id' => 6,
+            'description' => 'Copo de Heineken.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Caneca de Heineken',
+            'price' => 180,
+            'category_id' => 6,
+            'description' => 'Caneca de Heineken.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Erdinger',
+            'price' => 150,
+            'category_id' => 6,
+            'description' => 'Erdinger sem Álcool.'
+        ]); 
+
+        factory(Menu::class)->create([
+            'name' => 'Heineken',
+            'price' => 150,
+            'category_id' => 6,
+            'description' => 'Heineken sem Álcool.'
+        ]); 
     }
     //     $categories = factory(\App\Models\Category::class, 5)->create();
         
