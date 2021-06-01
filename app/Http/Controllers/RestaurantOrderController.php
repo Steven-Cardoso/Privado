@@ -35,6 +35,11 @@ class RestaurantOrderController extends Controller
             //->with('resto',$resto);
     }
 
+    public function index2()
+    {
+        return Order::all();
+    }
+
     public function add() 
     {
         //$resto = Restaurant::findOrFail($id);

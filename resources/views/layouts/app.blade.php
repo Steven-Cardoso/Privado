@@ -22,10 +22,17 @@
 <body style="background-image: url('imagem/sopa.jpg')">
     <div id="app">
        @include('layouts.nav')
-       
-        <main class="py-4">
+        
+       @can('delete-users')
+        <div class='row'>
+            <div id="sidebar" class="col-md-2">
+                @include("sidebar.dashboard")
+            </div>
+            <main class="py-4 col-md-8">
+        @endcan
             @yield('content')
         </main>
+    </div>
     </div>
 </body>
 </html>

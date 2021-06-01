@@ -4,13 +4,12 @@
       <div class="row mb-3">
           <div class="col-md-12">
               <!--<button class="btn btn-primary float-right ml-4">Solicitar Pagamento</button>-->
-            <button @click="handleOrderSave" class="btn btn-success float-right">Enviar Pedido</button>
+            <button @click="handleOrderSave(); name2;" class="btn btn-success float-right">Enviar Pedido</button>
             
           </div>
       </div>
       <b-carousel
       id="carousel-1"
-      v-model="slide"
       :interval="0"
       controls
       indicators
@@ -18,25 +17,21 @@
       img-width="1024"
       img-height="1024"
       style="text-shadow: 1px 1px 2px #333;"
-      @sliding-start="onSlideStart"
-      @sliding-end="onSlideEnd"
     >
     
       <b-carousel-slide
-        caption="Detalhes do Cliente"
-        text="Introduza os seus dados."
-        img-src="https://picsum.photos/1024/720/?image=52"
-        class="align-middle"        
+        img-src="imagem/foto1.jpg"
       >
-   
+            <h1>Detalhes do Cliente</h1>
+            <h3>Introduza os seus dados</h3>
             <!--<h3>Detalhes do Cliente</h3>-->
-            
-            <order-form class="align-top" @customerDetailsChanged = "customerDetailsHandle"></order-form>
+            <div class="back">
+            <order-form @customerDetailsChanged = "customerDetailsHandle"></order-form>
             <!-- <order-details :order-details="orderDetails"></order-details> -->
-  
+            </div>
       </b-carousel-slide>
-      <b-carousel-slide img-src="https://picsum.photos/1024/720/?image=54">
-        <h1>Detalhes da Ordem!</h1>
+      <b-carousel-slide img-src="imagem/foto2.jpg">
+        <h1>Detalhes da Ordem</h1>
         <div class="row">
     <div class="col-md-5">
         <h3><span class="" v-if="finalAmount > 0">Total a Pagar: {{finalAmount}} MZN</span></h3>
@@ -90,6 +85,42 @@
         </div>
         </div>
     </b-carousel-slide>
+    <b-carousel-slide
+        img-src="imagem/foto2.jpg"
+      >
+            <h1>Pedidos Feitos</h1>
+            <div class="back2">
+                <table class="bg-white table table-hover table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Order Id</th>
+                        <th>Valor Total</th>
+                        <th>Estado</th>
+                        <th>Detalhes do cliente</th>
+                        <th>Pratos</th> 
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="order in name2" :key="order.id">
+                        <td>{{order.id}}</td>
+                        <td>{{order.amount}} Mzn</td>
+                        <td>{{(order.isComplete) ? 'Completo' : 'Incompleto'}}</td>
+                        <td>
+                                Nome: {{order.order_details.customer_name}}
+                                <br>
+                                Telefone: {{order.order_details.customer_phone}}
+                                <br>
+                                Email: {{order.order_details.customer_address}}
+                            </td>
+                            <td>
+                               {{order.pratos}}
+                            </td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+      </b-carousel-slide>
       </b-carousel>
   </div>
 </template>
@@ -109,13 +140,21 @@ export default {
         OrderDetails,
         OrderList
     },
+    data() {
+        return {
+            orders: []
+        }
+    },
     created() {
+         axios.get('./api/order')
+        .then(response => this.orders = response.data);
         this.loadRestoMenuItems(1);
         window.eventBus.$on('menuItemAdded', this.handleNewMenuItem);
         window.eventBus.$on('filteredList', this.handleFilteredList);
         window.eventBus.$on('clearFilteredList', this.handleClearFilteredList);
         window.eventBus.$on('removeOrderedItem', this.handleRemoveOrderedItem);
         // window.eventBus.$on('customerDetailsChanged', this.)
+       
 
     },
     computed: {
@@ -133,6 +172,11 @@ export default {
                 prato = prato + order.name + "\n\t";
             });
             return prato;
+        },
+         name2: function () {
+            //console.log(this.name)
+            return this.orders.filter(i => i.order_details.customer_name === this.name || i.order_details.customer_phone === this.phone)
+            //console.log(this.orderDetails);
         }
     },
     data() {
@@ -140,7 +184,9 @@ export default {
             menuItems: [],
             orderDetails: [],
             originalMenuItems: [],
-            costumerDetails: null
+            costumerDetails: null,
+            name: '',
+            phone: ''
         }
     },
     methods: {
@@ -174,14 +220,16 @@ export default {
             this.orderDetails.forEach(item => {
                 orderDetails.push(item.id);
             });
-
+            this.name = this.costumerDetails['name'];
+            this.phone = this.costumerDetails['phone'];
             let orderData = {
                 resto_id: this.restoId, 
                 order_data: {
                     costumerDetails: this.costumerDetails,
                     finalAmount: this.finalAmount,
                     pratos: this.pratos,
-                    orderDetails: this.orderDetails
+                    orderDetails: this.orderDetails,
+                    
                 }
             };
 
@@ -191,3 +239,13 @@ export default {
     }
 }
 </script>
+<style>
+.back {
+    max-height: 400px;
+    min-height: 470px;
+}
+.back2 {
+    max-height: 500px;
+    min-height: 650px;
+}
+</style>

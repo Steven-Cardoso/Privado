@@ -28,5 +28,6 @@ Route::group(['middleware' => ['auth:api']], function() {
        Route::post('/order/paid', 'RestaurantOrderController@paid');
        Route::post('/order/mail', 'RestaurantOrderController@mail');
        Route::post('/order/sms', 'RestaurantOrderController@sms');
+       Route::get('/order', 'RestaurantOrderController@index2');
 });
 Route::post('item/save','MenuController@saveMenuItem');

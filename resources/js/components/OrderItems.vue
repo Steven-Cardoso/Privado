@@ -3,7 +3,7 @@
                     <tr v-for="order in orders" :key="order.id">
                         <td>{{order.id}}</td>
                         <td>{{order.amount}} Mzn</td>
-                        <td>{{(order.isComplete) ? 'Completed' : 'Incompleted'}}</td>
+                        <td>{{(order.isComplete) ? 'Completo' : 'Incompleto'}}</td>
                         <td>
                                 Nome: {{order.order_details.customer_name}}
                                 <br>
@@ -45,6 +45,12 @@ export default {
         clickPaid(order) {
             this.$emit("onPaid", order);
         }
-    }
+    },
+    /*Funciona
+    computed: {
+        name2: function () {
+            return this.orders.filter(i => i.order_details.customer_name === 'Russel Kreiger')
+        }
+    }*/
 }
 </script>
