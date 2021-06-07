@@ -3,8 +3,9 @@
          <table class="table table-hover table-striped">
               <thead>
                     <tr>
-                 <th>Name &amp; description</th>
-                    <th>Price</th>
+                 <th>Nome &amp; Descrição</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
                  </tr>
               </thead>
            <tbody>
@@ -15,6 +16,9 @@
                </td>
                <td>
                  <span v-text="item.price"></span>
+               </td>
+               <td>
+                 <span v-text="item.quantity"></span>
                </td>
              </tr>
           </tbody>

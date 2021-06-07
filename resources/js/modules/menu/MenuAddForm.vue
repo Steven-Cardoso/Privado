@@ -9,7 +9,7 @@
             </div>
 
             <div class="form-group">
-                <label for="name">Select Category</label>
+                <label for="name">Escolha a Categoria</label>
                 <multi-select
                 v-model="food.category"
                 :options="categories"
@@ -18,14 +18,21 @@
             </div>
 
             <div class="form-group">
-                <label for="name">Price</label>
+                <label for="name">Preço</label>
                 <input class="form-control" type="number" placeholder="Enter food item price"
                 v-model="food.price">
                 <div class="validation-message" v-text="validation.getMessage('price')"></div>
             </div>
 
+            <div class="form-group">
+                <label for="name">Quantidade</label>
+                <input class="form-control" type="number" placeholder="Enter food item quantity"
+                v-model="food.quantity">
+                <div class="validation-message" v-text="validation.getMessage('quantity')"></div>
+            </div>
+
           <div class="form-group">
-            <label for="name">Description</label>
+            <label for="name">Descrição</label>
             <textarea class="form-control" placeholder="Enter food description"
                       v-model="food.description"></textarea>
             <div class="validation-message" v-text="validation.getMessage('description')"></div>
@@ -59,6 +66,7 @@ export default {
               item: '',
               category: '',
               price: 100,
+              quantity: 20,
               description: ''
           };
         },

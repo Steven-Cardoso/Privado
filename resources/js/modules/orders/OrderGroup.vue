@@ -220,8 +220,9 @@ export default {
             this.orderDetails.forEach(item => {
                 orderDetails.push(item.id);
             });
-            this.name = this.costumerDetails['name'];
-            this.phone = this.costumerDetails['phone'];
+            this.name = this.costumerDetails['name'];//para ver conta
+            this.phone = this.costumerDetails['phone'];//para ver conta
+            console.log(this.pratos)
             let orderData = {
                 resto_id: this.restoId, 
                 order_data: {

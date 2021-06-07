@@ -24,6 +24,7 @@ class MenuController extends Controller
         $postData = $this->validate($request, [
             //'restoId' => 'required|numeric',
             'price' => 'required|numeric',
+            'quantity' => 'required|numeric',
             'item' => 'required',
             'description' => 'required|min:3',
             'category' => ['required', new RestoCategoryValidate()],
@@ -34,6 +35,7 @@ class MenuController extends Controller
         $menu = Menu::create([
             'name' => $postData['item'],
             'price' => $postData['price'],
+            'quantity' => $postData['quantity'],
             'description' => $postData['description'],
             //'resto_id' => $postData['restoId'],
             'category_id' => $category->id,
