@@ -24,7 +24,7 @@
         </div>
    @endcan
    @can('delete-users')
-        <resto-group></resto-group>
+        <!--<resto-group></resto-group>-->
         <menu-container :items="{{json_encode($menus)}}" :resto-id={{$restoId}}></menu-container>
    @endcan
    @can('garcon-user')
