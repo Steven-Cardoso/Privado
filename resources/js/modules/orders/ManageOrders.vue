@@ -1,5 +1,5 @@
 <template>
-<body style="background-image:none">
+<body class="list-group size" style="background-image:none">
     <table class="table table-hover table-bordered table-striped">
         <thead>
                     <tr>
@@ -80,3 +80,10 @@ export default {
     }
 }
 </script>
+<style>
+.size{
+    max-height: 400px;
+    min-height: 600px;
+    margin-bottom: 10px;
+}
+</style>

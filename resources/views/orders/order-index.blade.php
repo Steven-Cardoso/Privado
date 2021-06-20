@@ -12,7 +12,7 @@
     <div class="col-md-12">       
     @if($orders->count()>0)
 
-    <div class="mb-3 float-right">
+    <div class="mb-3">
         <a href="{{route('resto.orders.add')}}" class="btn btn-primary">Adicionar Ordem</a>
     </div>
 
