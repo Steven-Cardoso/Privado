@@ -12,10 +12,10 @@
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Nome</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Roles</th>
-                        <th scope="col">Actions</th>
+                        <th scope="col">Tipo de user</th>
+                        <th scope="col">Acções</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -27,13 +27,13 @@
                         <td>{{implode(',', $user->roles()->get()->pluck('name')->toArray()) }}</td>
                         <td>
                           @can('edit-users') 
-                            <a href="{{route('admin.users.edit', $user->id)}}"> <button type="button" class="btn btn-primary float-left">Edit</button></a>
+                            <a href="{{route('admin.users.edit', $user->id)}}"> <button type="button" class="btn btn-primary float-left mb-2">Editar</button></a>
                             @endcan
                             @can('delete-users')
                             <form action="{{ route('admin.users.destroy', $user)}}" method="POST" class="float-left">
                                 @csrf
                                 {{ method_field('DELETE') }}
-                            <button type="submit" class="btn btn-warning">Delete</button></a>
+                            <button type="submit" class="btn btn-warning">Apagar</button></a>
                             </form>
                             @endcan
                         </td>

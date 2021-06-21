@@ -6,7 +6,7 @@ use App\Models\Menu;
 
 class MenuService
 {
- public function getMenuWithCategory($restoId)
+ public function getMenuWithCategory()
  {
     $categories = Menu::get()
     ->groupBy('category.name');

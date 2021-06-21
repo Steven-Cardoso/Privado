@@ -1,21 +1,19 @@
 <template>
-<div class="wrapper menu__container">
-      <div class="row">
-          <div class="col-md-8">
-              <card-component>
-                  <template slot="title">My menu Items</template>
-                     <template slot="body">
-                          <!-- Content will come here -->
-                          <div class="section">
-                              <multi-select
-                              v-model="menu"
-                              :options="categories"
-                              ></multi-select>
-                          </div>
-                          <menu-groups :items="currentMenuItems"></menu-groups>
-                      </template>
-              </card-component>
-          </div>
+ <div class="wrapper menu__container">
+    <card-component>
+        <template slot="title">Menu do Restaurante O Farol "Pool Bar"</template>
+           <template slot="body">
+            <div class="section">
+              <multi-select
+               v-model="menu"
+               :options="categories"
+              ></multi-select>
+            </div>
+            <menu-groups class="list-group" :items="currentMenuItems"></menu-groups>
+        </template>
+    </card-component>
+        
+          <!--
           <div class="col-md-4">
               <card-component>
                   <template slot="title">Add menu Item</template>
@@ -26,9 +24,8 @@
                    ></menu-add-form>
                    </template>
               </card-component>
-          </div>
-      </div>
-    </div>
+          </div>-->
+ </div>
 </template>
 
 <script>

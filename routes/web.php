@@ -20,8 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
+//->prefix('admin') mudei isso
+Route::namespace('Admin')->name('admin.')->middleware('can:manage-users')->group(function(){
     Route::resource('/users', 'UsersController', ['except' => ['show','create','store']]);
 });
 
@@ -29,8 +29,10 @@ Auth::routes();
 
 Route::group(['middleware'=>'auth'], function(){
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/addMenuItem', 'HomeController@index2');//funcionou
     //Route::get('/restaurants', 'RestaurantController@index')->name('restos');
     Route::get('/restaurants/menu','MenuController@index')->name('restos.menu');
-    Route::get('/restaurants/orders','RestaurantOrderController@index')->name('pedidos');
-    Route::get('/restaurants/orders/add','RestaurantOrderController@add')->name('resto.orders.add');
+    Route::get('/orders','RestaurantOrderController@index')->name('pedidos');
+    Route::get('/addOrder','RestaurantOrderController@add')->name('resto.orders.add');
+    
 });

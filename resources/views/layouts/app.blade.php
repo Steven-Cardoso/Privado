@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body style="background-image: url('imagem/sopa.jpg')">
+<body class="example2">
     <div id="app">
        @include('layouts.nav')
         
@@ -36,3 +36,9 @@
     </div>
 </body>
 </html>
+<style>.example2 {
+  background: url('imagem/sopa.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+</style>

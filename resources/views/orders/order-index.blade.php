@@ -12,10 +12,12 @@
     <div class="col-md-12">       
     @if($orders->count()>0)
 
+    <!--
     <div class="mb-3">
         <a href="{{route('resto.orders.add')}}" class="btn btn-primary">Adicionar Ordem</a>
     </div>
-
+    -->
+    
     <manage-orders :orders="{{ json_encode($orders) }}"></manage-orders>
             {{-- <table class="table table-hover table-bordered table-striped">
                 <thead>

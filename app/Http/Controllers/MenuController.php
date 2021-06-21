@@ -16,7 +16,8 @@ class MenuController extends Controller
         $service = new MenuService;
         $menus = $service->getMenuWithCategory();
 
-        return view('menu.menu-index', compact('menus'));
+        //return view('menu.menu-index', compact('menus'));
+        //return view('menu.menu-index');
     }
     
     public function saveMenuItem(Request $request)
