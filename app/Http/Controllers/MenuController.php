@@ -19,6 +19,18 @@ class MenuController extends Controller
         //return view('menu.menu-index', compact('menus'));
         //return view('menu.menu-index');
     }
+
+    public function remove(Request $request)
+    {
+        $postData = $this->validate($request, [
+            'item_id' => ['required','exists:menus,id'],
+            'item_category' => ['required','exists:menus,category_id']
+        ]);
+
+        Menu::where('id', $postData['item_id'],Category::where('category_id', $postData['item_category']))->delete();
+
+        return response()->json("", 201); 
+    }
     
     public function saveMenuItem(Request $request)
     {

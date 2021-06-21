@@ -10,7 +10,7 @@
                         <th>Pratos</th> 
                         <th>Mesa nr</th>                       
                         <th>Pago</th>
-                        <th>Accoes</th>
+                        <th>Acções</th>
 
                     </tr>
                 </thead>

@@ -22,6 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['auth:api']], function() {
        Route::post('/resto', 'RestaurantController@store');
        Route::post('/resto/menu', 'MenuController@getRestoMenu');
+       Route::post('/menu/remove', 'MenuController@remove');// ainda a fazer
        Route::post('/order/save', 'RestaurantOrderController@store');
        Route::post('/order/complete', 'RestaurantOrderController@complete');
        Route::post('/order/remove', 'RestaurantOrderController@remove');
