@@ -31,6 +31,22 @@ class MenuController extends Controller
 
         return response()->json("", 201); 
     }
+
+    public function edit(Request $request)
+    {
+        $postData = $this->validate($request, [
+            'item_id' => ['required','exists:menus,id'],
+            'item_category' => ['required','exists:menus,category_id']
+        ]);
+
+        $menu = Menu::find('id', $postData['item_id'],Category::find('category_id', $postData['item_category']));
+        $menu->price = $postData['price'];
+        $menu->quantity = $postData['quantity'];
+        $menu->save();
+
+
+        return response()->json("", 201); 
+    }
     
     public function saveMenuItem(Request $request)
     {
