@@ -46,6 +46,10 @@ Vue.component('card-component', require('./components/Card.vue').default);
 
 //Vue.component('tabs-component', require('./components/Tabs.vue').default);
 
+Vue.component('menu-item', require('./modules/menu/MenuItem.vue').default);
+
+Vue.component('add-menu-stock', require('./modules/menu/AddMenuStock.vue').default);
+
 Vue.component('menu-container', require('./modules/menu/MenuContainer.vue').default);
 
 Vue.component('resto-group', require('./modules/restos/RestoGroup.vue').default);

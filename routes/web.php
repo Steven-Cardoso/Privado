@@ -31,6 +31,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/addMenuItem', 'HomeController@index2');//funcionou
     //Route::get('/restaurants', 'RestaurantController@index')->name('restos');
+    Route::get('/addMenuQuantity', 'HomeController@index3')->name('restos');
     Route::get('/restaurants/menu','MenuController@index')->name('restos.menu');
     Route::get('/orders','RestaurantOrderController@index')->name('pedidos');
     Route::get('/addOrder','RestaurantOrderController@add')->name('resto.orders.add');

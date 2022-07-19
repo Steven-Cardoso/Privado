@@ -15,7 +15,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                    <a class="dropdown-item" href="/home">Visualizar Menu </a>
                    <a class="dropdown-item" href="/addMenuItem">Adicionar Item</a>
-                   <a class="dropdown-item" href="#">Adicionar Stock de um Item</a>
+                   <a class="dropdown-item" href="/addMenuQuantity">Adicionar Stock de um Item</a>
                 </div></li><br/>
             <li><a class="text-dark" href="/users">User Management</a></li><br/>
         </ul>

@@ -2,8 +2,8 @@
     <div class="add_form__wrapper">
         <form v-on:submit.prevent="handleSubmit">
             <div class="form-group">
-                <label for="name">Food Item</label>
-                <input class="form-control" type="text" placeholder="Enter food item name"
+                <label for="name">Nome do Prato</label>
+                <input class="form-control" type="text" placeholder="Introduza o nome do prato."
                 v-model="food.item">
                 <div class="validation-message" v-text="validation.getMessage('item')"></div>
             </div>
@@ -19,21 +19,21 @@
 
             <div class="form-group">
                 <label for="name">Preço</label>
-                <input class="form-control" type="number" placeholder="Enter food item price"
+                <input class="form-control" type="number" placeholder="Introduza o preco do prato."
                 v-model="food.price">
                 <div class="validation-message" v-text="validation.getMessage('price')"></div>
             </div>
 
             <div class="form-group">
                 <label for="name">Quantidade</label>
-                <input class="form-control" type="number" placeholder="Enter food item quantity"
+                <input class="form-control" type="number" placeholder="Introduza a quantidade do prato."
                 v-model="food.quantity">
                 <div class="validation-message" v-text="validation.getMessage('quantity')"></div>
             </div>
 
           <div class="form-group">
             <label for="name">Descrição</label>
-            <textarea class="form-control" placeholder="Enter food description"
+            <textarea class="form-control" placeholder="Faca a descricao do prato."
                       v-model="food.description"></textarea>
             <div class="validation-message" v-text="validation.getMessage('description')"></div>
           </div>

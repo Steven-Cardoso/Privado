@@ -58,4 +58,24 @@ class HomeController extends Controller
 
         return view('menu.menu-index', compact('menus','restoId', 'restos'))->with('orders', $orders);
     }
+
+    public function index3(MenuService $service, RestoService $restoService)
+    {
+        // $menus = Menu::all();
+        // $resto_ids = [1];
+
+        $orders = Order::orderBy('isComplete')
+        ->orderByDesc('created_at')
+        ->paginate(20);
+
+        $restoId = 1;
+
+        $menus = $service->getMenuWithCategory($restoId);
+
+        $restos = $restoService -> userRestoAndTables();
+
+        return view('menu.menus-addstock', compact('menus','restoId', 'restos'))->with('orders', $orders);
+
+    }
+
 }

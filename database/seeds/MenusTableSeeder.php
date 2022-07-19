@@ -35,7 +35,8 @@ class MenusTableSeeder extends Seeder
         factory(Menu::class)->create([
             'name' => 'Cabeças de Lula Panadas',
             'price' => 450,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 3,
             'category_id' => 1,
             'description' => 'Cabeças de Lula.'
         ]);
@@ -44,7 +45,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Camarões Panados',
             'price' => 500,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 6,
             'description' => 'Camarões Panados.'
         ]);
     
@@ -52,7 +54,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Pops de Frango',
             'price' => 450,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Pops de frango.'
         ]);
 
@@ -60,7 +63,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Camarões a Fufuta',
             'price' => 350,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 4,
             'description' => 'Camarões a Fufuta.'
         ]);
 
@@ -68,7 +72,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Camarão Alhinho',
             'price' => 500,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 1,
             'description' => 'Camarão Alhinho.'
         ]);
 
@@ -76,7 +81,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Chouriço',
             'price' => 400,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Chouriço.'
         ]);
 
@@ -84,7 +90,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Ameijoa',
             'price' => 450,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 0,
             'description' => 'Ameijoa.'
         ]);
 
@@ -92,7 +99,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Mexilhões',
             'price' => 800,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Mexilhões.'
         ]);
 
@@ -100,7 +108,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Pão de Alho',
             'price' => 200,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 9,
             'description' => 'Pão de Alho.'
         ]);
 
@@ -108,7 +117,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Ostras 12 unidades',
             'price' => 1000,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 3,
             'description' => 'Ostras 12 unidades.'
         ]);
 
@@ -116,7 +126,8 @@ class MenusTableSeeder extends Seeder
             'name' => '1kg de Camarão Cozido',
             'price' => 500,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => '1kg de Camarão Cozido.'
         ]);
 
@@ -124,7 +135,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Prego no pão com batatas fritas',
             'price' => 300,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Prego no pão com batatas fritas.'
         ]);
     
@@ -132,7 +144,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Prego no prato com ovo, batata e salada',
             'price' => 500,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Prego no prato com ovo, batata e salada.'
         ]);
 
@@ -140,7 +153,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Mutlhutlhu de carne/peixe com pão',
             'price' => 300,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Mutlhutlhu de carne/peixe com pão.'
         ]);
 
@@ -148,7 +162,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Moelas Estufadas',
             'price' => 300,
             'category_id' => 1,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Moelas Estufadas.'
         ]);
     }
@@ -159,7 +174,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Rissóis',
             'price' => 250,
             'category_id' => 2,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Rissóis.'
         ]);
 
@@ -167,7 +183,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Chamussas',
             'price' => 250,
             'category_id' => 2,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Chamussas.'
         ]);
 
@@ -175,7 +192,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Spring roll',
             'price' => 250,
             'category_id' => 2,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Spring roll.'
         ]);
 
@@ -183,7 +201,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Pastéis de Bacalhau',
             'price' => 250,
             'category_id' => 2,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Pastéis de Bacalhau.'
         ]);
     }
@@ -195,7 +214,8 @@ class MenusTableSeeder extends Seeder
             3 Camarões TG c/batatas fritas e salada',
             'price' => 3000,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Camarão Grelhado
             3 Camarões TG c/batatas fritas e salada.'
         ]);
@@ -205,7 +225,8 @@ class MenusTableSeeder extends Seeder
             6 Camarões G c/batatas fritas e salada',
             'price' => 2100,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Camarão Grelhado
             6 Camarões G c/batatas fritas e salada.'
         ]);
@@ -215,7 +236,8 @@ class MenusTableSeeder extends Seeder
             6 Camarões M c/batatas fritas e salada',
             'price' => 1800,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Camarão Grelhado
             6 Camarões M c/batatas fritas e salada.'
         ]);
@@ -225,7 +247,8 @@ class MenusTableSeeder extends Seeder
             10 Camarões 2/S c/batatas fritas e salada',
             'price' => 700,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Camarão Grelhado
             10 Camarões 2/S c/batatas fritas e salada.'
         ]);
@@ -235,7 +258,8 @@ class MenusTableSeeder extends Seeder
             1/2 kg de Camarão médio frito',
             'price' => 1000,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Camarão a Kilo
             1/2 kg de Camarão médio frito.'
         ]);
@@ -245,7 +269,8 @@ class MenusTableSeeder extends Seeder
             1 kg de Camarão médio frito',
             'price' => 1000,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Camarão a Kilo
             1 kg de Camarão médio frito.'
         ]);
@@ -255,7 +280,8 @@ class MenusTableSeeder extends Seeder
             com batata e salada',
             'price' => 1350,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Mix de lulas e 5 camarões S grelhados
             com batata e salada.'
         ]);
@@ -265,7 +291,8 @@ class MenusTableSeeder extends Seeder
             (Porção de peixe, lulas, camarão com batata arroz e salada) Para 2 Pessoas',
             'price' => 3500,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Frigideira de marisco a FAROL
             (Porção de peixe, lulas, camarão com batata arroz e salada) Para 2 Pessoas.'
         ]);
@@ -275,7 +302,8 @@ class MenusTableSeeder extends Seeder
             (Porção de peixe, lulas, camarão com batata arroz e salada) Para 4 Pessoas',
             'price' => 5500,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Frigideira de marisco a FAROL
             (Porção de peixe, lulas, camarão com batata arroz e salada) Para 4 Pessoas.'
         ]);
@@ -283,7 +311,8 @@ class MenusTableSeeder extends Seeder
         factory(Menu::class)->create([
             'name' => 'Travessa de 30 camarões grelhados(grandes) King',
             'price' => 7000,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'category_id' => 3,
             'description' => 'Travessa de 30 camarões grelhados(grandes) King.'
         ]);
@@ -292,7 +321,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Travessa de 30 camarões grelhados(médios) Queen',
             'price' => 5000,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Travessa de 30 camarões grelhados(médios) Queen.'
         ]);
 
@@ -300,7 +330,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Travessa de 30 camarões grelhados(médios) S',
             'price' => 3000,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Travessa de 30 camarões grelhados(médios) S.'
         ]);
 
@@ -308,7 +339,8 @@ class MenusTableSeeder extends Seeder
             'name' => '10 Lagostins',
             'price' => 3000,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => '10 Lagostins.'
         ]);
         
@@ -316,7 +348,8 @@ class MenusTableSeeder extends Seeder
             'name' => '20 Lagostins',
             'price' => 5000,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => '20 Lagostins.'
         ]);
 
@@ -324,7 +357,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Peixe de prato para uma pessoa vermelhão',
             'price' => 900,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Peixe de prato para uma pessoa vermelhão.'
         ]);
 
@@ -332,7 +366,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Peixe de prato para uma pessoa Garoupa',
             'price' => 1200,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Peixe de prato para uma pessoa Garoupa.'
         ]);
 
@@ -340,7 +375,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Peixe de prato para uma pessoa filete de peixe',
             'price' => 1200,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Peixe de prato para uma pessoa filete de peixe.'
         ]);
 
@@ -348,7 +384,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Peixe de prato para uma pessoa 4 Sardinhas batata coziza e salada',
             'price' => 650,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Peixe de prato para uma pessoa 4 Sardinhas batata coziza e salada.'
         ]);
 
@@ -356,7 +393,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Peixe de prato para uma pessoa Salmão à Farol',
             'price' => 1500,
             'category_id' => 3,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Peixe de prato para uma pessoa Salmão à Farol.'
         ]);
     }
@@ -367,7 +405,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Chicken Fried Rice',
             'price' => 220,
             'category_id' => 4,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Fried rice is dish of cooked rice that has been stir-fried in a wok or a frying pan
             and is usually mixed with other ingredients such as eggs, vegetables, seafood, or meat.It is often eaten 
             by itself or as an accompaniment to another dish.'
@@ -377,7 +416,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Hainanese Chicken Rice',
             'price' => 250,
             'category_id' => 4,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Hainenese chicken rice is a dish adapted from early Chinese immigrants originally from
             Hainan province in southern China, where it\'s called Wenchang chicken. It is considered one of the national
             dishes of Singapore.'
@@ -387,7 +427,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Chicken Chettinad',
             'price' => 280,
             'category_id' => 4,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Chicken Chettinad or Chettinad chicken is a classic Indian recipe, from the cuisine of Chettinad. 
             It consists of chicken marineted. in yogurt, tumeric and a paste of red chillies, kalpasi, coconut, poppy seeds, 
             coriander seeds, cumin seeds, fennel seeds, black pepper, ground nuts, onions, garlic and gingelly oil. '
@@ -400,7 +441,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Bebinca',
             'price' => 250,
             'category_id' => 5,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Bebinca.'
         ]);  
 
@@ -408,7 +450,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Mousse(Chocolocate ou Malambe)',
             'price' => 250,
             'category_id' => 5,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Mousse(Chocolocate ou Malambe).'
         ]);  
 
@@ -416,7 +459,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Magnum',
             'price' => 180,
             'category_id' => 5,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Magnum.'
         ]);  
 
@@ -424,7 +468,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Cornetos',
             'price' => 200,
             'category_id' => 5,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Cornetos.'
         ]);
 
@@ -432,7 +477,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Chá',
             'price' => 70,
             'category_id' => 5,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Chá.'
         ]);
 
@@ -440,7 +486,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Café',
             'price' => 80,
             'category_id' => 5,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Café.'
         ]);
 
@@ -448,7 +495,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Galão',
             'price' => 150,
             'category_id' => 5,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Galão.'
         ]);
 
@@ -456,7 +504,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Cappuccino',
             'price' => 150,
             'category_id' => 5,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Cappuccino.'
         ]);
     }
@@ -467,7 +516,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Água pequena 500ml',
             'price' => 70,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Água vumba 500ml.'
         ]);  
 
@@ -475,7 +525,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Água grande 1.5l',
             'price' => 120,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Água grande vumba 1.5l .'
         ]);  
 
@@ -483,7 +534,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Água das pedras',
             'price' => 120,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Água das pedras.'
         ]);  
 
@@ -491,7 +543,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Sumo Ceres pequeno',
             'price' => 80,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Sumo Ceres pequeno.'
         ]);  
 
@@ -499,7 +552,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Sumo Compal/Santal 0.5l',
             'price' => 140,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Sumo Compal/Santal 0.5l.'
         ]);  
 
@@ -507,7 +561,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Sumo Compal/Santal 0.5l',
             'price' => 140,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Sumo Compal/Santal 0.5l.'
         ]);  
 
@@ -515,7 +570,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Sumo Ceres 1l',
             'price' => 250,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Sumo Ceres 1l.'
         ]);
         
@@ -523,7 +579,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Sumo Compal 1l',
             'price' => 250,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Sumo Compal 1l.'
         ]);  
 
@@ -531,7 +588,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Red Bull',
             'price' => 180,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Red Bull.'
         ]);  
 
@@ -539,7 +597,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Refresco à lata(Sprite, Tónica, Minute Maid, Soda, Ginger ale,...)',
             'price' => 90,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Refresco à lata(Sprite, Tónica, Minute Maid, Soda, Ginger ale,...)'
         ]);  
 
@@ -547,7 +606,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Txilar à Garrafa',
             'price' => 120,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Txilar à Garrafa.'
         ]);  
 
@@ -555,7 +615,8 @@ class MenusTableSeeder extends Seeder
             'name' => '2M/Manica/Laurentina',
             'price' => 120,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => '2M/Manica/Laurentina.'
         ]);  
 
@@ -563,7 +624,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Castle Lite',
             'price' => 120,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Castle Lite.'
         ]);  
 
@@ -571,7 +633,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Amstel lite/lager',
             'price' => 120,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Amstel lite/lager.'
         ]);  
 
@@ -579,7 +642,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Super bock mini',
             'price' => 120,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Super bock mini.'
         ]);  
 
@@ -587,7 +651,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Heineken Pequena',
             'price' => 140,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Heineken Pequena.'
         ]);  
 
@@ -595,7 +660,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Budweiser',
             'price' => 140,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Budweiser.'
         ]); 
 
@@ -603,7 +669,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Savana Dry',
             'price' => 140,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Savana Dry.'
         ]); 
 
@@ -611,7 +678,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Hunters Gold/Dry',
             'price' => 140,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Hunters Gold/Dry.'
         ]); 
 
@@ -619,7 +687,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Spin',
             'price' => 140,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Spin.'
         ]); 
 
@@ -627,7 +696,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Strongbow',
             'price' => 200,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Strongbow.'
         ]); 
 
@@ -635,7 +705,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Bacardi Breezer',
             'price' => 200,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Bacardi Breezer.'
         ]); 
 
@@ -643,7 +714,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Stella',
             'price' => 200,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Stella.'
         ]); 
 
@@ -651,7 +723,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Twist',
             'price' => 200,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Twist.'
         ]); 
 
@@ -659,7 +732,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Sol',
             'price' => 200,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Sol.'
         ]); 
 
@@ -667,7 +741,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Corona',
             'price' => 200,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Corona.'
         ]); 
 
@@ -675,7 +750,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Vodka com Redbull',
             'price' => 300,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Vodka com Redbull.'
         ]); 
 
@@ -683,7 +759,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Tipo tinto',
             'price' => 200,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Tipo tinto.'
         ]); 
 
@@ -691,7 +768,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Caipirinha',
             'price' => 350,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Caipirinha.'
         ]); 
 
@@ -699,7 +777,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Copo de Txilar',
             'price' => 100,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Copo de Txilar.'
         ]); 
 
@@ -707,7 +786,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Copo de 2M',
             'price' => 100,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Copo de 2M.'
         ]); 
 
@@ -715,7 +795,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Caneca de Txilar',
             'price' => 150,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Caneca de Txilar.'
         ]); 
 
@@ -723,7 +804,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Caneca de 2M',
             'price' => 150,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Caneca de 2M.'
         ]); 
 
@@ -731,7 +813,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Copo de Heineken',
             'price' => 160,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Copo de Heineken.'
         ]); 
 
@@ -739,7 +822,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Caneca de Heineken',
             'price' => 180,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Caneca de Heineken.'
         ]); 
 
@@ -747,7 +831,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Erdinger',
             'price' => 150,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Erdinger sem Álcool.'
         ]); 
 
@@ -755,7 +840,8 @@ class MenusTableSeeder extends Seeder
             'name' => 'Heineken',
             'price' => 150,
             'category_id' => 6,
-            'quantity' => 20,
+            'quantityA' => 20,
+            'quantityC' => 2,
             'description' => 'Heineken sem Álcool.'
         ]); 
     }
