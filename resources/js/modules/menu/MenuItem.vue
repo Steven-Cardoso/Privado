@@ -11,23 +11,23 @@
                  </tr>
               </thead>
            <tbody>
-                  <tr v-for="(item, key) in items" :key="key">
+                  <tr v-for="item in items" :key="item.id">
                <td>
-                  <strong v-text="item.name"></strong>
-                  <p v-text="item.description"></p>
+                  <strong>{{item.name}}</strong>
+                  <p>{{item.description}}</p>
                </td>
                <td>
-                 <span v-text="item.price"></span>
+                 <span>{{item.price}}</span>
                </td>
                <td>
-                 <span v-text="item.quantityA"></span>
+                 <span>{{item.quantityA}}</span>
                </td>
                <td>
-                <span v-text="item.quantityC"></span>
+                <span>{{item.quantityC}}</span>
                </td>
                <td>
                   <!--<button class="btn btn-sm btn-success mb-4">Editar</button>-->
-                  <button class="btn btn-sm btn-success mb-4" data-toggle="modal" data-target="#exampleModal">Editar Preco</button> 
+                  <button type="button" class="btn btn-sm btn-success mb-4" @click="setDados(item)">Editar Preco</button> 
                   <br>
                   <button class="btn btn-sm btn-success mb-4" data-toggle="modal" data-target="#exampleModal2">Adicionar Stock</button>
                   <br>
@@ -37,7 +37,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Editar {{item.name}}</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Editar {{form.name}}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -46,7 +46,8 @@
                             <form>
                              <div class="form-group">
                                 <label for="price" class="col-form-label">Preço:</label>
-                                <input type="number" v-model="item.price" class="form-control" id="preco">
+                                <input type="number" v-model="form.price" class="form-control" id="preco">
+                                <input type="text" name="item" id="item">
                             </div>
                             </form>
                         </div>
@@ -57,6 +58,7 @@
                         </div>
                     </div>
                   </div> 
+
                   <div class="modal fade" id="exampleModal2" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -92,13 +94,23 @@
 
 <script>
 import axios from "axios";
+import Form from "vform";
 export default {
    props: ['items'],
    data() {
         return {
             localItems: null,
             menu: this.editMenuItem(),
-        }
+            form: new Form({
+                id: '',
+                name: '',
+                category: '',
+                price: '',
+                quantityA: '',
+                quantityC: '',
+                description: ''
+            })
+        };
     },
     created() {
         this.localItems = this.items;
@@ -112,7 +124,15 @@ export default {
               quantity: 20
           };
         },
+        setDados(item) {
+        //document.getElementById('item').value = params;
+        this.form.reset();
+        $('#exampleModal').modal("show");
+        this.form.fill(item);
+
+     },
       handleDeleteMenuItem(item){
+        console.log(item.name);
             if (!confirm("Tem a certeza que deseja apagar o pedido?")) {
                 return;
             }
