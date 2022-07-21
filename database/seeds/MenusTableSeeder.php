@@ -43,7 +43,7 @@ class MenusTableSeeder extends Seeder
 
         factory(Menu::class)->create([
             'name' => 'Camarões Panados',
-            'price' => 500,
+            'price' => 533,
             'category_id' => 1,
             'quantityA' => 20,
             'quantityC' => 6,
@@ -52,7 +52,7 @@ class MenusTableSeeder extends Seeder
     
         factory(Menu::class)->create([
             'name' => 'Pops de Frango',
-            'price' => 450,
+            'price' => 452,
             'category_id' => 1,
             'quantityA' => 20,
             'quantityC' => 2,
@@ -61,7 +61,7 @@ class MenusTableSeeder extends Seeder
 
         factory(Menu::class)->create([
             'name' => 'Camarões a Fufuta',
-            'price' => 350,
+            'price' => 351,
             'category_id' => 1,
             'quantityA' => 20,
             'quantityC' => 4,

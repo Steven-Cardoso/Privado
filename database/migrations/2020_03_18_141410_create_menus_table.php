@@ -17,7 +17,8 @@ class CreateMenusTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('description');
-            $table->float('price',6,2);
+            //$table->float('price',6,2);
+            $table->unsignedInteger('price');
             $table->unsignedInteger('quantityA');
             $table->unsignedInteger('quantityC');
             //$table->unsignedInteger('resto_id');

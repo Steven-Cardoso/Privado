@@ -37,15 +37,15 @@ class MenuController extends Controller
         $postData = $this->validate($request, [
             'item_id' => ['required','exists:menus,id'],
             'item_category' => ['required','exists:menus,category_id']
+            
+            //'item_quantityA' => ['required','exists:menus,quantityA']
         ]);
-
-        $menu = Menu::find('id', $postData['item_id'],Category::find('category_id', $postData['item_category']));
-        $menu->price = $postData['price'];
-        $menu->quantity = $postData['quantity'];
+        //$menu = Menu::find('id', $postData['item_id'],Category::find('category_id', $postData['item_category']));
+        $menu = Menu::where('id', $postData['item_id'],Category::where('category_id', $postData['item_category']))->first();
+        //echo($postData['item_price']);
+        $menu->price = $request['item_price'];
+        $menu->quantityA += $request['item_quantityA'];
         $menu->save();
-
-
-        return response()->json("", 201); 
     }
     
     public function saveMenuItem(Request $request)
