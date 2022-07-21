@@ -47,13 +47,13 @@
                              <div class="form-group">
                                 <label for="price" class="col-form-label">Preço:</label>
                                 <input type="number" v-model="form.price" class="form-control" id="preco">
-                                <input type="text" name="item" id="item">
+                                
                             </div>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" @click="handleEditMenuItem(item)">Actualizar</button>
+                            <button type="button" class="btn btn-primary" @click="handleEditMenuItem(form)">Actualizar</button>
                         </div>
                         </div>
                     </div>
@@ -151,8 +151,10 @@ export default {
             const postData = {item_id: item.id,
                               item_category: item.category_id,
                               item_price: item.price,
-                              item_quantity: item.quantity};
+                              item_quantityA: item.quantityA,
+                              item_quantityC: item.quantityC};
                               console.log(postData);
+                              location.reload();
         }
    }
 }
