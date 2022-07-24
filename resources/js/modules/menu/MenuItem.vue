@@ -45,14 +45,15 @@
                         <div class="modal-body">
                             <form>
                              <div class="form-group">
+                                <label for="price" class="col-form-label">Preço Atual: {{form.price}}</label><br>
                                 <label for="price" class="col-form-label">Preço:</label>
-                                <input type="number" v-model="form.price" class="form-control" id="preco">
+                                <input type="number" placeholder="Introduza o preco atualizado." v-model="form.price" class="form-control" id="preco">
                              </div>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" @click="handleEditMenuItem(form)">Actualizar</button>
+                            <button type="button" class="btn btn-primary"  @click="clickEditPrice(form)  ">Actualizar</button>
                         </div>
                         </div>
                     </div>
@@ -73,13 +74,13 @@
                                 <label for="quantity" class="col-form-label">Quantidade actual: {{form.quantityA}}</label><br>
                                 <label for="quantity" class="col-form-label">Quantidade Consumida: {{form.quantityC}}</label>
                                  <br>Adicionar:
-                                <input type="number" v-model="form.quantityA" class="form-control" id="quantidade">
+                                <input type="number" placeholder="Introduza a quantidade que pretende adicionar." v-model="form.quantityA2" class="form-control" id="quantidade">
                             </div>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" @click="handleEditMenuItem(form)">Actualizar</button>
+                            <button type="button" class="btn btn-primary" @click="clickAddStock(form)">Actualizar</button>
                         </div>
                         </div>
                     </div>
@@ -135,23 +136,29 @@ export default {
             const postData = {item_id: item.id,
                               item_category: item.category_id};
                               console.log(postData);
-            axios.post("/api/menu/remove", postData).then(response => {
+            axios.post("/api/menu/remove", postData).then(Response => {
+                location.reload();
                 this.localItems.data = this.localItems.data.filter(localItem => {
                     return localItem.id !== item.id || localItem.category_id !== item.category_id;
-                });
+                });                
             });
-            location.reload(); //funciona para fazer refresh da pagina corrente mas demora
+            //  location.reload(); funciona para fazer refresh da pagina corrente mas demora
             
         },
-        handleEditMenuItem(item){
+        /*handleEditMenuItem(item){
             const postData = {item_id: item.id,
                               item_category: item.category.id,
                               item_price: item.price,
-                              item_quantityA: item.quantityA,
+                              item_quantityA: item.quantityA2,
                               item_quantityC: item.quantityC};
                               console.log(postData.item_price);
         axios.post("/api/menu/edit", postData).then(response => {});
-        
+        }*/
+        clickEditPrice(item) {
+            this.$emit("editPrice", item);
+        },
+        clickAddStock(item){
+            this.$emit("addStock", item);
         }
    }
 }

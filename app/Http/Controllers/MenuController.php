@@ -46,6 +46,8 @@ class MenuController extends Controller
         $menu->price = $request['item_price'];
         $menu->quantityA += $request['item_quantityA'];
         $menu->save();
+        
+        return response()->json($menu, 201);   
     }
     
     public function saveMenuItem(Request $request)

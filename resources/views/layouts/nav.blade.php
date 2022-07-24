@@ -27,7 +27,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registar') }}</a>
                                 </li>
                             @endif
                         @else
@@ -46,6 +46,9 @@
                                     <a class="dropdown-item" href="{{ route('admin.users.index') }}">
                                         User Management
                                     </a>
+                                    @if (Route::has('register'))
+                                        <a class="dropdown-item" href="{{ route('register') }}">{{ __('Registar') }}</a>
+                                    @endif
                                     @endcan
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

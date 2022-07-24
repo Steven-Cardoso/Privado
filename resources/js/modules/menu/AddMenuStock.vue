@@ -9,7 +9,7 @@
                :options="categories"
               ></multi-select>
             </div>
-            <menu-item class="list-group" :items="currentMenuItems"></menu-item>
+            <menu-item class="list-group" :items="currentMenuItems" @editPrice="handleEditMenuItem" @addStock="handleEditMenuItem"></menu-item>
         </template>
     </card-component>
  </div>
@@ -52,7 +52,20 @@ export default {
       handleNewMenuItem(item, category) {
         console.log('item',item);
         this.localItems[category].unshift(item);
-      }
+        
+      },
+      handleEditMenuItem(item){
+        
+            const postData = {item_id: item.id,
+                              item_category: item.category.id,
+                              item_price: item.price,
+                              item_quantityA: item.quantityA2,
+                              item_quantityC: item.quantityC};
+                              console.log(postData.item_price);
+        axios.post("/api/menu/edit", postData).then(Response =>{
+            location.reload();
+        });
+        }
   }
 }
 </script>

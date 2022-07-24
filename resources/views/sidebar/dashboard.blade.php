@@ -18,5 +18,6 @@
                    <a class="dropdown-item" href="/addMenuQuantity">Adicionar Stock de um Item</a>
                 </div></li><br/>
             <li><a class="text-dark" href="/users">User Management</a></li><br/>
+            <li><a class="text-dark" href="/register">Registrar</a></li><br/>
         </ul>
 </nav>
